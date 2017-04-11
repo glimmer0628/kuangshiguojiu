@@ -1,0 +1,133 @@
+
+<!-- saved from url=(0049)http://202.98.222.66:8080/elearning/login-MOU.jsp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">
+	var CURRENT_LANGUAGE="";
+</script>
+
+
+
+<title>茅台在线培训学院</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #f1f1f1;
+	margin-top: 20px;
+}
+.STYLE1 {
+	background: url(res/login.gif);
+	width: 102px;
+	height: 42px;
+	border-bottom-style: none;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-style: none;
+	cursor:pointer;
+}
+.STYLE5 {
+	color: #666666;
+	font-size: 12px;
+}
+.STYLE6 {
+	color: #FFFFFF;
+	font-size: 12px;
+}
+-->
+</style>
+	<script>
+	function gotoLogin(){
+		var form = document.loginForm;
+		var j_username = form.j_username.value;
+		var j_password = form.j_password.value;
+		if(j_username==''){
+			alert('请填写用户名！');
+			form.j_username.focus();
+			return false;
+		}
+		if(j_password==''){
+			alert('请输入密码！');
+			form.j_password.focus();
+			return false;
+		}
+		form.submitButton.disabled = true;
+		return true;
+	}
+	function changeValidateImg(){
+		document.getElementById("validateImg").src = "/elearning/loginvalidation.action?random="+Math.random();
+	}
+	</script>
+</head>
+<body cz-shortcut-listen="true">
+<div align="center">
+<form name="loginForm" action="http://202.98.222.66:8080/elearning/login.action" method="post" onsubmit="return gotoLogin();">
+<input type="hidden" name="j_branchCode" value="MOU">
+<input type="hidden" name="j_outBranchCode" value="MOU">
+  <table width="708" height="409" border="0" cellpadding="0" cellspacing="0">
+    <tbody><tr>
+      <td height="52" colspan="3"><img src="./res/title.jpg" width="708" height="52"></td>
+    </tr>
+    <tr>
+      <td bgcolor="#FFFFFF"><img src="./res/pic.jpg" width="412" height="421"></td>
+      <td bgcolor="#FFFFFF"><table width="100%" height="382" border="0" cellpadding="0" cellspacing="6">
+        <tbody><tr>
+          <td height="51" colspan="2" valign="top"><p><img src="./res/tb2.gif" width="240" height="33"><br>
+          </p>            </td>
+        </tr>
+        <tr>
+          <td height="19" colspan="2"><div align="left"> <img src="./res/t1.gif" width="53" height="16"></div></td>
+        </tr>
+        <tr>
+          <td height="35" colspan="2" valign="top">
+            <label>
+            <div align="left">
+              <input type="text" name="j_username" maxlength="30" style="border:1px   solid   #999999; color: #666666; width: 240px; height: 25px; font-size: 18px;">
+            </div>
+            </label>
+          </td>
+        </tr>
+        
+        <tr>
+          <td height="16" colspan="2"><div align="left"><img src="./res/t2.gif" width="43" height="16"></div></td>
+        </tr>
+        <tr>
+          <td height="35" colspan="2" valign="top"><div align="left">
+            <input type="password" name="j_password" maxlength="32" style="border:1px   solid   #999999; color: #666666; width: 240px; height: 25px; font-size: 18px;">
+          </div></td>
+        </tr>
+        <tr>
+          <td height="17" colspan="2"><div align="left"><img src="./res/t4.gif" width="51" height="16"></div></td>
+        </tr>
+        <tr>
+          <td height="37" valign="top"><div align="left">
+            <input type="text" name="validationCode" maxlength="5" style="border:1px   solid   #999999; color: #666666; width: 100px; height: 25px; font-size: 18px;">
+          </div></td>
+          <td height="37" valign="top"><img id="validateImg" src="./res/loginvalidation.action" onclick="changeValidateImg()" width="80" height="25"></td>
+        </tr>
+
+        <tr>
+          <td width="45%" height="42">
+              <label></label>
+              <div align="left">
+                <input name="submitButton" type="submit" class="STYLE1" value="">
+              </div>
+          </td>
+          <td width="55%"><div align="left"><span class="STYLE5"><a href="http://202.98.222.66:8080/elearning/authorization/learner/learner!gotoValidateInfo.action" target="_blank">忘记密码？</a></span></div></td>
+        </tr>
+        <tr>
+          <td height="16">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody></table></td>
+      <td bgcolor="#FFFFFF">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="30" colspan="2" bgcolor="#0056A6"><div align="right" class="STYLE6">旷世国酒股份有限公司信息中心提供服务支持</div></td>
+      <td height="30" bgcolor="#0056A6">&nbsp;</td>
+    </tr>
+  </tbody></table>
+</form>
+</div>
+
+
+<script>
+document.loginForm.j_username.focus();
+</script></body></html>

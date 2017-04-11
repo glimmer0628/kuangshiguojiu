@@ -1,0 +1,10 @@
+.nav_li{
+  color: #333;
+  /*padding: 0 10px;*/
+  cursor: pointer;
+  border-radius: 5px;
+}
+.nav_li:hover{
+  color: #fff;
+  background: #cc1d0b;
+}

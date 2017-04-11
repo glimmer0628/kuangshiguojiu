@@ -1,0 +1,1015 @@
+﻿//视聆通公用javascript库
+/// <reference path="jquery-1.3.2-vsdoc2.js" />
+
+var rootpath = "http://" + window.location.host + "/";
+//服务端ajax服务页面的路径
+var ajaxpath = "http://" + window.location.host + "/ajax/";
+
+//oapi地址
+var oapiUrl = "http://www.emaotai.cn:90/oAPI/";    //生产模式
+// 测试模式：var oapiUrl = "http://www.emaotai.cn/oAPITest/";
+//报表打印地址
+var printExpressUrl = "Reporters/showExpressReport.aspx"
+
+var yxwdbh = "";
+//网点编号
+
+var yxwdmc = "";
+//网点名称
+
+var ckdm = "";
+//当前操作仓库代码
+
+var ckmc = "";
+//当前操作仓库名称
+
+var maxnoticeid = 0;
+//最新通知号
+
+var usercode = "";
+//用户编号
+
+var username = "";
+//用户名
+
+var BodyWidth = $(window).width();
+var winHeight = $(window).height();
+var BodyHight = winHeight;
+var lWorkAreaHeight = BodyHight - 89 - 32 - 28; //工作区高度，其中：89 页头高度 、 32 工具条高度、 28 页脚高度
+
+
+//根据对象ID后缀关键字得到jquery对象
+function $ById(id) {
+    var selecter = "*[id$=" + id.toString() + "]";
+    var obj = $("\"" + selecter + "\"");
+    return obj;
+}
+
+//根据对象名称后缀关键字得到jquery对象
+function $ByName(name) {
+    var obj = $("*[name$=" + name + "]");
+    return obj;
+}
+
+function $byid(id) {
+    return $ById(id);
+}
+
+//根据对象名称后缀关键字得到jquery对象
+function $byname(name) {
+    return $ByName(name);
+}
+
+
+//根据对象ID得到javascript对象,注意：此函数仅针对form对象
+function $ObjectById(id) {
+    var selecter = "*[id$=" + id.toString() + "]";
+    var fullid = $("\"" + selecter + "\"").attr("id");
+    var obj = document.getElementById(fullid);
+    return obj;
+}
+
+function $objectbyid(id) {
+    return $ObjectById(id);
+}
+
+
+//根据对象名称得到javascript对象,注意：此函数仅针对form对象
+function $ObjectByName(name) {
+    var id = $("*[name$=" + name + "]").attr("id");
+    var obj = document.getElementById(id);
+    return obj;
+}
+
+function $objectbyname(name) {
+    return $ObjectByName(name);
+}
+
+//根据jQuery选择器得到javascript对象
+function $ObjectByJQuery(selector) {
+    var id = $("\"" + selector.toString() + "\"").attr("id");
+    var obj = document.getElementById(id);
+    return obj;
+}
+
+function $objectbyjquery(selector) {
+    return $ObjectByJQuery(selector);
+}
+
+//根据元件Id得到javascript对象
+function ObjectForId(Id) {
+    var obj = document.getElementById(Id);
+    return obj;
+}
+
+function objectforid(Id) {
+    var obj = document.getElementById(Id);
+    return obj;
+}
+
+//------------CSS函数---------------------------------
+function getbodyheight() {
+    BodyHight = $(window).height();
+    return BodyHight;
+}
+
+function GetScreenSize() {
+    //获取客户端浏览器的大小信息、工作区大小
+    BodyWidth = $(window).width();
+    winHeight = $(window).height();
+    BodyHight = winHeight;
+
+    var lHeaderHeight = 0;
+
+    var aObj = $byid("tblPageHeader");
+
+    if (aObj.length != 0) {
+        lHeaderHeight = parseInt(aObj.height());
+    }
+
+    var lFooterHeight = 0;
+    aObj = $byid("tblPageFooter");
+    if (aObj.length != 0) {
+        lFooterHeight = parseInt(aObj.height());
+    }
+
+    lWorkAreaHeight = BodyHight - lHeaderHeight - lFooterHeight;
+}
+
+function SaveScreenHeight() {
+    //向后台传送客户端浏览器的高度
+    BodyHight = $(window).height();
+
+    var lHeaderHeight = 0;
+
+    var aObj = $byid("tblPageHeader");
+
+    if (aObj.length != 0) {
+        lHeaderHeight = parseInt(aObj.height());
+    }
+
+    var lFooterHeight = 0;
+    aObj = $byid("tblPageFooter");
+    if (aObj.length != 0) {
+        lFooterHeight = parseInt(aObj.height());
+    }
+
+    lWorkAreaHeight = BodyHight - lHeaderHeight - lFooterHeight;
+
+    ajaxpath = getajaxpath();
+    var AjaxServerPage = ajaxpath + "getClientInfo.aspx";
+
+    aObj = $.ajax({
+        type: "post",
+        url: AjaxServerPage,
+        async: true,
+        data: {
+            "screenheight": BodyHight,
+            "workareaheight": lWorkAreaHeight
+        },
+        datatype: "text"
+    });
+
+}
+
+
+function setpos(aId, x, y) {
+    //设置对象的位置
+    var idstr = aId.toString();
+    var aObj = $("*[id$=" + idstr + "]");
+    aObj.css("left", x);
+    aObj.css("top", y);
+}
+
+function setcenter(aId) {
+    //对象放置在浏览器窗口可见区域中间
+    var idstr = aId.toString();
+    var aObj = $("*[id$=" + idstr + "]");
+    var w = parseInt(aObj.css("width"));
+    var h = parseInt(aObj.css("height"));
+
+    BodyWidth = $(window).width();
+    BodyHight = $(window).height();
+
+    var x = parseInt((BodyWidth - w) / 2);
+    var y = parseInt((BodyHight - h) / 2);
+
+    aObj.css("left", x);
+    aObj.css("top", y);
+
+}
+
+function setfullclient(aId) {
+    //设置对象大小与浏览器内容有效区域相同
+    var idstr = aId.toString();
+    var aObj = $("*[id$=" + idstr + "]");
+    //var w = parseInt(aObj.css("width"));
+    //var h = parseInt(aObj.css("height"));
+    WinWidth = $(window).width();
+    BodyWidth = $(window).width();
+    BodyHight = $(window).height();
+
+    aObj.css("left", 0);
+    aObj.css("top", 0);
+    aObj.css("width", BodyWidth + "px");
+    aObj.css("height", BodyHight + "px");
+}
+
+function setheight(aId, aheight) {
+    //对象大小与浏览器内容有效区域相同
+    var idstr = aId.toString();
+    var aObj = $("*[id^=" + idstr + "]");
+    //var w = parseInt(aObj.css("width"));
+    //var h = parseInt(aObj.css("height"));
+    aObj.css("height", aheight + "px");
+}
+
+function SetGridSize(aGrid, aOtherHeight) {
+    //设置AspxGridView的宽度、高度
+    GetScreenSize();
+    var GridHeight = lWorkAreaHeight - aOtherHeight;
+    var GridWidth = BodyWidth - 16;
+    aGrid.SetHeight(GridHeight);
+    aGrid.SetWidth(GridWidth);
+
+    $(window).resize(function (e) {
+        GetScreenSize();
+        var GridHeight = lWorkAreaHeight - aOtherHeight;
+        var GridWidth = BodyWidth - 16;
+        aGrid.SetHeight(GridHeight);
+        aGrid.SetWidth(GridWidth);
+    });
+
+}
+
+function SetAspxObjSize(aObj, aOtherHeight) {
+    //设置DevExpress Aspx对象的宽度、高度
+    GetScreenSize();
+    var GridHeight = lWorkAreaHeight - aOtherHeight;
+    var GridWidth = BodyWidth - 16;
+    aObj.SetHeight(GridHeight);
+    aObj.SetWidth(GridWidth);
+
+    $(window).resize(function (e) {
+        GetScreenSize();
+        var GridHeight = lWorkAreaHeight - aOtherHeight;
+        var GridWidth = BodyWidth - 16;
+        aObj.SetHeight(GridHeight);
+        aObj.SetWidth(GridWidth);
+    });
+
+}
+
+function SetObjHeight(aObj, aOtherHeight) {
+    //设置纯javascript对象的高度
+    GetScreenSize();
+    var GridHeight = lWorkAreaHeight - aOtherHeight;
+    //var GridWidth = BodyWidth;
+    aObj.Height = GridHeight;
+
+    $(window).resize(function (e) {
+        GetScreenSize();
+        var GridHeight = lWorkAreaHeight - aOtherHeight;
+        //var GridWidth = BodyWidth;
+        aObj.Height = GridHeight;
+    });
+}
+
+function SetDivHeight(aObj, aOtherHeight) {
+    //设置Div对象的高度
+    GetScreenSize();
+    var GridHeight = lWorkAreaHeight - aOtherHeight;
+    //var GridWidth = BodyWidth;
+    aObj.offsetHeight = GridHeight;
+
+
+    $(window).resize(function (e) {
+        GetScreenSize();
+        var GridHeight = lWorkAreaHeight - aOtherHeight;
+        //var GridWidth = BodyWidth;
+        aObj.offsetHeight = GridHeight;
+    });
+}
+
+function SetDivHeightById(aId, aOtherHeight) {
+    //根据id，设置Div对象的高度
+    GetScreenSize();
+    var GridHeight = lWorkAreaHeight - aOtherHeight;
+    //var GridWidth = BodyWidth;
+    var aObj = document.getElementById(aId);
+    aObj.style.height = GridHeight + "px";
+
+
+    $(window).resize(function (e) {
+        GetScreenSize();
+        var GridHeight = lWorkAreaHeight - aOtherHeight;
+        //var GridWidth = BodyWidth;
+        var aObj = document.getElementById(aId);
+        aObj.style.height = GridHeight + "px";
+
+    });
+}
+
+function $SetHeight(aId, aOtherHeight) {
+    //用jQuery方式，根据对象id，设置对象的高度
+    GetScreenSize();
+    var aHeight = lWorkAreaHeight - aOtherHeight;
+    var idstr = aId.toString();
+    var aObj = $("*[id$=" + idstr + "]");
+    aObj.css("height", aHeight + "px");
+
+
+    $(window).resize(function (e) {
+        GetScreenSize();
+        var aHeight = lWorkAreaHeight - aOtherHeight;
+        var idstr = aId.toString();
+        var aObj = $("*[id$=" + idstr + "]");
+        aObj.css("height", aHeight + "px");
+    });
+}
+
+function SetHeightById(aId, aOtherHeight) {
+    //设置对象的高度
+    GetScreenSize();
+    var aHeight = lWorkAreaHeight - aOtherHeight;
+    var idstr = aId.toString();
+    var aObj = $("*[id$=" + idstr + "]");
+    aObj.css("height", aHeight);
+
+
+    $(window).resize(function (e) {
+        GetScreenSize();
+        var aHeight = lWorkAreaHeight - aOtherHeight;
+        var idstr = aId.toString();
+        var aObj = $("*[id$=" + idstr + "]");
+        aObj.css("height", aHeight);
+    });
+}
+
+function SetGridHeight(aGrid, aOtherHeight) {
+    //设置AspxGridView的高度
+    GetScreenSize();
+    var GridHeight = lWorkAreaHeight - aOtherHeight;
+    //var GridWidth = BodyWidth;
+    aGrid.SetHeight(GridHeight);
+    //aGrid.SetWidth(aWidthPercent);
+
+    $(window).resize(function (e) {
+        GetScreenSize();
+        var GridHeight = lWorkAreaHeight - aOtherHeight;
+        //var GridWidth = BodyWidth;
+        aGrid.SetHeight(GridHeight);
+        //aGrid.SetWidth(aWidthPercent);
+    });
+}
+
+function SetAspxObjHeight(aObj, aOtherHeight) {
+    //设置DevExpress Aspx的高度
+    GetScreenSize();
+    var aHeight = lWorkAreaHeight - aOtherHeight;
+    aObj.SetHeight(aHeight);
+
+    $(window).resize(function (e) {
+        GetScreenSize();
+        var aHeight = lWorkAreaHeight - aOtherHeight;
+        aObj.SetHeight(aHeight);
+    });
+
+}
+
+
+//----------- Ajax数据库操作函数----------------------
+//------同步获取数据-------------------
+//serverpage 服务页面
+function getvaluebypage(serverpage, sql) {
+    //post命令中，中文不用编码处理
+    ajaxpath = getajaxpath(); //ajaxpath;
+    var AjaxServerPage = ajaxpath + serverpage;
+
+    var aObj = $.ajax({
+        type: "post",
+        url: AjaxServerPage,
+        async: false,
+        data: { "sql": sql },
+        datatype: "text"
+    });
+
+    var s = aObj.responseText.toString();
+    var i = s.indexOf("</value>");
+    s = s.substring(0, i);
+    s = s.replace("<value>", "");
+
+    return s;
+}
+
+function getsqlvalue(sql) {
+    //post命令中，中文不用编码处理
+
+    ajaxpath = getajaxpath(); //获取ajax服务端文件URL地址
+    var AjaxServerPage = ajaxpath + "getBySql.aspx";
+    //alert(AjaxServerPage);
+
+    var aObj = $.ajax({
+        type: "post",
+        url: AjaxServerPage,
+        async: false,
+        data: { "sql": sql },
+        datatype: "text"
+    });
+
+    var s = aObj.responseText.toString();
+    var i = s.indexOf("</value>");
+    s = s.substring(0, i);
+    s = s.replace("<value>", "");
+
+    return s;
+}
+
+function $getbysql(serverpage, sql, callbackfun) {
+
+    var result = "";
+
+    //post命令中，中文不用编码处理
+    //var sql = "select top 1 qybh from t_xtgl_xzqh with (nolock) where qymc = '" + qymc + "' ";
+    ajaxpath = getajaxpath(); //ajaxpath; 
+    var AjaxServerPage = ajaxpath + serverpage;
+
+
+    $.post(AjaxServerPage, { Action: "post", "sql": sql }, function (data, textStatus) {
+
+        result = callbackfun(data, textStatus);
+
+    }, "text");
+
+    return result;
+}
+
+function $getsqlvalue(serverpage, sql, callback) {
+
+    var result = "";
+
+    //post命令中，中文不用编码处理
+    //var sql = "select top 1 qybh from t_xtgl_xzqh with (nolock) where qymc = '" + qymc + "' ";
+    ajaxpath = getajaxpath(); //ajaxpath; 
+    var AjaxServerPage = ajaxpath + serverpage;
+
+
+    $.post(AjaxServerPage, { Action: "post", "sql": sql }, function (data, textStatus) {
+
+        if (textStatus == "success") {
+            result = data.toString();
+            callback(result);
+        }
+
+    }, "text");
+
+
+}
+
+function getbysqlCallback(data, textStatus) {
+    // data 可以是 xmlDoc, jsonObj, html, text, 等等.
+    //this; // 这个Ajax请求的选项配置信息，请参考jQuery.get()说到的this alert(data.result);
+
+    var r = "";
+
+    if (textStatus == "success") {
+        r = data.toString();
+    }
+
+    return r;
+
+}
+
+
+//------------CSS函数---------------------------------
+function setpos(aId, x, y) {
+    var idstr = aId.toString();
+    var aObj = $("*[id$=" + idstr + "]");
+    aObj.css("left", x);
+    aObj.css("top", y);
+}
+
+function setcenter(aId) {
+
+    var idstr = aId.toString();
+    var aObj = $("*[id$=" + idstr + "]");
+    var w = parseInt(aObj.css("width"));
+    var h = parseInt(aObj.css("height"));
+
+    //var BodyWidth = document.body.clientWidth;
+    //var BodyHigh = document.body.clientHeight;
+    var BodyHigh = $(window).height();        //浏览器高度
+    var BodyWidth = $(window).width();        //浏览器宽度
+    //var BodyHigh = $("body").height();        //网页高度
+    //var BodyWidth = $("body").width();        //网页宽度
+
+    var x = parseInt((BodyWidth - w) / 2) + "px";
+    //var y = parseInt((BodyHigh - h) / 2) + "px";
+    var y = parseInt(document.documentElement.scrollTop + (BodyHigh - h) / 2) + "px";
+    aObj.css("left", x);
+    aObj.css("top", y);
+
+}
+
+//==============字符串函数=========================================
+
+function strlen(str)
+//字符串长度函数，支持中英混合
+{
+    var len;
+    var i;
+    len = 0;
+    for (i = 0; i < str.length; i++) {
+        if (str.charCodeAt(i) > 255) len += 2; else len++;
+    }
+    return len;
+}
+
+// 去掉字符两端的空白字符
+function trim(str) {
+    return str.replace(/(^[\t\n\r]*)|([\t\n\r]*$)/g, '');
+};
+
+// 去掉字符左边的空白字符
+function ltrim(str) {
+    return str.replace(/^[\t\n\r]/g, '');
+};
+
+// 去掉字符右边的空白字符
+function rtrim(str) {
+    return str.replace(/[\t\n\r]*$/g, '');
+};
+
+//------------Cookie函数--------------------------------
+function getcookie(name) {
+    var start = document.cookie.indexOf(name + "=");
+    var len = start + name.length + 1;
+    if ((!start) && (name != document.cookie.substring(0, name.length))) {
+        return null;
+    }
+    if (start == -1) return null;
+    var end = document.cookie.indexOf(';', len);
+    if (end == -1) end = document.cookie.length;
+    return unescape(document.cookie.substring(len, end));
+}
+
+function setcookie(name, value, expires, path, domain, secure) {
+    var today = new Date();
+    today.setTime(today.getTime());
+    if (expires) {
+        expires = expires * 1000 * 60 * 60 * 24;
+    }
+    var expires_date = new Date(today.getTime() + (expires));
+    document.cookie = name + '=' + escape(value) +
+        ((expires) ? ';expires=' + expires_date.toGMTString() : '') +
+        ((path) ? ';path=' + path : '') +
+        ((domain) ? ';domain=' + domain : '') +
+        ((secure) ? ';secure' : '');
+}
+
+function deletecookie(name, path, domain) {
+    if (getCookie(name)) document.cookie = name + '=' +
+            ((path) ? ';path=' + path : '') +
+            ((domain) ? ';domain=' + domain : '') +
+            ';expires=Thu, 01-Jan-1970 00:00:01 GMT';
+
+}
+
+//----------对话框----------------------------------------
+//锁定背景屏幕
+function lockScreen() {
+    var clientH = $(window).height();        //浏览器高度
+    var clientW = $(window).width();        //浏览器宽度
+    var PageWidth = document.body.scrollWidth;
+    var PageHeight = document.body.scrollHeight;
+    //var docH = $("body").height();        //网页高度
+    //var docW = $("body").width();        //网页宽度
+    var bgW = clientW > PageWidth ? clientW : PageWidth;        //取有效宽
+    var bgH = clientH > PageHeight ? clientH : PageHeight;        //取有效高
+    if ($("#iFrameLock").length == 0) {        //判断DIV是否存在
+
+        $("body").append(
+                '<iframe id="iFrameLock" HSPACE="0" VSPACE="0" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" style="Z-INDEX:988;opacity:0.5;background-color:#808080;LEFT: 0px;TOP:0px;WIDTH:100%;POSITION:relative;HEIGHT:100%;">' +
+                '</iframe>' +
+                '<div id="divLock" HSPACE="0" VSPACE="0" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" style="Z-INDEX:989;opacity:0.5;background-color:#808080;LEFT: 0px;TOP:0px;WIDTH:100%;POSITION:relative;HEIGHT:100%;">' +
+                '</div>'
+                );
+
+        $("#iFrameLock").height(bgH);
+        $("#iFrameLock").width(bgW);
+        $("#divLock").height(bgH);
+        $("#divLock").width(bgW);
+
+        $("#iFrameLock").css("display", "block");
+        $("#iFrameLock").css("background-color", "#000000");
+        $("#iFrameLock").css("position", "absolute");
+        $("#iFrameLock").css("z-index", "9988");
+        $("#iFrameLock").css("top", "0px");
+        $("#iFrameLock").css("left", "0px");
+        $("#iFrameLock").css("opacity", "0.1");
+
+        $("#divLock").css("display", "block");
+        $("#divLock").css("background-color", "#000000");
+        $("#divLock").css("position", "absolute");
+        $("#divLock").css("z-index", "9989");
+        $("#divLock").css("top", "0px");
+        $("#divLock").css("left", "0px");
+        $("#divLock").css("opacity", "0.5");
+    }
+    else {
+        $("#iFrameLock").height(bgH);
+        $("#iFrameLock").width(bgW);
+        $("#divLock").height(bgH);
+        $("#divLock").width(bgW);
+    }
+
+    $(window).resize(
+			function (e) {
+			    if ($("#iFrameLock").length == 0) {
+			        return;
+			    }
+
+			    var clientH = $(window).height();        //浏览器高度
+			    var clientW = $(window).width();        //浏览器宽度
+			    var PageWidth = document.body.scrollWidth;
+			    var PageHeight = document.body.scrollHeight;
+			    var bgW = clientW > PageWidth ? clientW : PageWidth;        //取有效宽
+			    var bgH = clientH > PageHeight ? clientH : PageHeight;        //取有效高
+			    $("#iFrameLock").height(bgH);
+			    $("#iFrameLock").width(bgW);
+			    $("#divLock").height(bgH);
+			    $("#divLock").width(bgW);
+			});
+}
+
+//清除背景锁定
+function clearLockScreen() {
+    $("#iFrameLock").remove();
+    $("#divLock").remove();
+}
+
+function disableSelect() {
+    for (i = 0; i < document.all.length; i++) {
+        if (document.all(i).tagName == "SELECT")
+            document.all(i).disabled = true;
+    }
+
+}
+
+function enableSelect() {
+    for (i = 0; i < document.all.length; i++) {
+        if (document.all(i).tagName == "SELECT") {
+            document.all(i).disabled = false;
+        }
+    }
+}
+
+
+
+function CloseDialog() {
+    $byid("ModalDialog").hide();
+}
+
+function ShowDialog(aMessage) {
+    //生成消息窗口
+    rootpath = getroot();
+    lockScreen();
+    //disableSelect();
+    var aObj = $ById("ModalDialog");
+
+    if (aObj.length == 0) {
+        var DialogDiv =
+           ' <div id="ModalDialog" ' +
+           '   style="Z-INDEX:9999; BORDER-RIGHT: #808080 2px solid; BORDER-TOP: #808080 2px solid; BACKGROUND: #ffffff; LEFT: 198px; BORDER-LEFT: #808080 2px solid; WIDTH: 477px; BORDER-BOTTOM: #808080 2px solid; POSITION: absolute; TOP: 254px; HEIGHT: 181px;display: none;"> ' +
+           '	<div style="BORDER-RIGHT: medium none; BORDER-TOP: medium none;Z-INDEX:999; BACKGROUND: #990000; LEFT: px; BORDER-LEFT: medium none; WIDTH: 475px; BORDER-BOTTOM: medium none; POSITION: relative; TOP: 0px; HEIGHT: 30px"> ' +
+           '	  <div style="DISPLAY: inline; FONT-SIZE: 9pt; Z-INDEX: 11; LEFT: 33px; WIDTH: 26px; COLOR: #ffffff; FONT-FAMILY: 宋体; POSITION: absolute; TOP: 7px; HEIGHT: 16px" align="center"  ms_positioning="FlowLayout">注意' +
+           '      </div> ' +
+           '    <img style="Z-INDEX:9999; LEFT: 6px; POSITION: absolute; TOP: 3px" alt="" ' +
+           '        src="' + rootpath + 'images/dialog24.gif" ismap="true">' +
+           '    </div> ' +
+           '	<div id="ModalDialogMsgText" style="Z-INDEX:90002;FONT-SIZE: 9pt; LEFT: 74px; OVERFLOW: auto; WIDTH: 371px; FONT-FAMILY: 宋体; POSITION: absolute; TOP: 46px; HEIGHT: 79px">' +
+           '    </div> ' +
+           '    <img style="Z-INDEX:9999; LEFT: 22px; POSITION: absolute; TOP: 46px" alt="" ' +
+           '        src="' + rootpath + 'images/msg.gif"> ' +
+           '    <input id="ModalDiagCloseButton" style="BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #808080 1px solid;margin: 0 0 0 0;padding-top:1;vertical-align: middle;FONT-FAMILY: 宋体;FONT-SIZE: 9pt; Z-INDEX:999; BACKGROUND: #c00000; LEFT: 209px; BORDER-LEFT: #808080 1px solid; WIDTH: 63px; COLOR: #ffffff; BORDER-BOTTOM: #808080 1px solid; POSITION: absolute; TOP: 139px; HEIGHT: 23px" type="button" value="确定" size="32" >' +
+           '    <iframe HSPACE="0" VSPACE="0" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" style="Z-INDEX:-1;LEFT: 0px;TOP:0px;WIDTH:475px;POSITION:relative;HEIGHT:179px;">' +
+           '    </iframe>' +
+           ' </div>';
+        $(document.body).append(DialogDiv);
+    }
+    $("#ModalDiagCloseButton").click(function () {
+        CloseDialog();
+        $ById("ModalDialog").remove();
+        clearLockScreen();
+        //$("#iFrameLock").remove();
+        //enableSelect();
+    });
+
+
+    $ById("ModalDialogMsgText").html(aMessage);
+    setcenter("ModalDialog");
+
+    $ById("ModalDialog").show();
+
+}
+
+function ShowMassage(aMessage) {
+    //生成消息窗口
+    rootpath = getroot();
+    //lockScreen();
+    //disableSelect();
+    var aObj = $ById("ModalDialog");
+
+    if (aObj.length == 0) {
+        var DialogDiv =
+           ' <div id="ModalDialog" ' +
+           '   style="Z-INDEX:9999; BORDER-RIGHT: #808080 2px solid; BORDER-TOP: #808080 2px solid; BACKGROUND: #ffffff; LEFT: 198px; BORDER-LEFT: #808080 2px solid; WIDTH: 477px; BORDER-BOTTOM: #808080 2px solid; POSITION: absolute; TOP: 254px; HEIGHT: 181px;display: none;"> ' +
+           '	<div style="BORDER-RIGHT: medium none; BORDER-TOP: medium none;Z-INDEX:999; BACKGROUND: #990000; LEFT: px; BORDER-LEFT: medium none; WIDTH: 475px; BORDER-BOTTOM: medium none; POSITION: relative; TOP: 0px; HEIGHT: 30px"> ' +
+           '	  <div style="DISPLAY: inline; FONT-SIZE: 9pt; Z-INDEX: 11; LEFT: 33px; WIDTH: 26px; COLOR: #ffffff; FONT-FAMILY: 宋体; POSITION: absolute; TOP: 7px; HEIGHT: 16px" align="center"  ms_positioning="FlowLayout">注意' +
+           '      </div> ' +
+           '    <img style="Z-INDEX:9999; LEFT: 6px; POSITION: absolute; TOP: 3px" alt="" ' +
+           '        src="' + rootpath + 'images/dialog24.gif" ismap="true">' +
+           '    </div> ' +
+           '	<div id="ModalDialogMsgText" style="Z-INDEX:90002;FONT-SIZE: 9pt; LEFT: 74px; OVERFLOW: auto; WIDTH: 371px; FONT-FAMILY: 宋体; POSITION: absolute; TOP: 46px; HEIGHT: 79px">' +
+           '    </div> ' +
+           '    <img style="Z-INDEX:9999; LEFT: 22px; POSITION: absolute; TOP: 46px" alt="" ' +
+           '        src="' + rootpath + 'images/msg.gif"> ' +
+           '    <input id="ModalDiagCloseButton" style="BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #808080 1px solid;margin: 0 0 0 0;padding-top:1;vertical-align: middle;FONT-FAMILY: 宋体;FONT-SIZE: 9pt; Z-INDEX:999; BACKGROUND: #c00000; LEFT: 209px; BORDER-LEFT: #808080 1px solid; WIDTH: 63px; COLOR: #ffffff; BORDER-BOTTOM: #808080 1px solid; POSITION: absolute; TOP: 139px; HEIGHT: 23px" type="button" value="确定" size="32" >' +
+           '    <iframe HSPACE="0" VSPACE="0" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" style="Z-INDEX:-1;LEFT: 0px;TOP:0px;WIDTH:475px;POSITION:relative;HEIGHT:179px;">' +
+           '    </iframe>' +
+           ' </div>';
+        $(document.body).append(DialogDiv);
+    }
+    $("#ModalDiagCloseButton").click(function () {
+        CloseDialog();
+        $ById("ModalDialog").remove();
+        clearLockScreen();
+        //enableSelect();
+    });
+
+
+    $ById("ModalDialogMsgText").html(aMessage);
+    setcenter("ModalDialog");
+
+    $ById("ModalDialog").show();
+
+}
+
+
+function getvalidlogin(aloginname) {
+    //根据客户端提供的登录名检查是否名称重复
+
+    ajaxpath = getajaxpath(); //获取ajax服务端文件URL地址
+    var AjaxServerPage = ajaxpath + "getValidlogin.aspx";
+
+    var aObj = $.ajax({
+        type: "post",
+        url: AjaxServerPage,
+        async: false,
+        data: { "login": aloginname },
+        datatype: "text"
+    });
+
+    var s = aObj.responseText.toString();
+    var i = s.indexOf("</value>");
+    s = s.substring(0, i);
+    s = s.replace("<value>", "");
+
+    return s;
+}
+
+function getvalidemail(aEmail) {
+    //根据客户端提供的邮箱检查是否邮箱重复
+
+    ajaxpath = getajaxpath(); //获取ajax服务端文件URL地址
+    var AjaxServerPage = ajaxpath + "getValidEmail.aspx";
+
+    var aObj = $.ajax({
+        type: "post",
+        url: AjaxServerPage,
+        async: false,
+        data: { "email": aEmail },
+        datatype: "text"
+    });
+
+    var s = aObj.responseText.toString();
+    var i = s.indexOf("</value>");
+    s = s.substring(0, i);
+    s = s.replace("<value>", "");
+
+    return s;
+}
+
+function IsValidEmail(emails) {
+    var emailPattern = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+    if (emailPattern.test(emails) == false)
+        return false;
+    else
+        return true;
+}
+
+
+function setprint(sqldetail, sqlmaster, notes) {
+    //设置ActiveX报表打印控件参数
+    var prtobj = document.getElementById("gwlReport");
+    if (sqldetail != "")
+        prtobj.SQL = sqldetail;
+    else
+        prtobj.SQL = "null";
+
+    if (sqlmaster != "")
+        prtobj.MasterSQL = sqlmaster;
+    else
+        prtobj.MasterSQL = "null";
+
+    if (notes != "")
+        prtobj.Notes = notes;
+    else
+        prtobj.Notes = "";
+}
+
+function Print() {
+    //调用activeX打印
+    var obj = document.getElementById("gwlReport");
+    if (obj.PrintReport != null)
+        obj.PrintReport();
+}
+
+function PrintById(ActiveXId) {
+    //调用指定activeX打印
+    var obj = document.getElementById(ActiveXId);
+    if (obj.PrintReport != null)
+        obj.PrintReport();
+}
+
+function PopMessage(aMsg) {
+    //显示消息
+    //var dlg = $byid("MsgPopup");
+    if (MsgPopup != null) {
+        MsgPopup.SetWidth(420);
+        MsgPopup.SetHeight(150);
+        MsgPopup.SetContentHtml(aMsg);
+        MsgPopup.Show();
+    }
+    else
+        ShowMassage(aMsg);
+}
+
+function HideMessage() {
+    if (MsgPopup != null) {
+        MsgPopup.Hide();
+    }
+}
+//---------菜单函数------------------------------------
+function SetMenuItem(aLabel, aDiv) {
+    $byid(aDiv).hide();
+    $byid(aLabel).hover(function () {
+        var allmenu = $("*[id^=divMenu]").hide();
+        var mnu = $byid(aDiv);
+        var obj = $byid(aLabel);
+        var x = parseInt(obj.offset().left);
+        var w = parseInt(mnu.width());
+        var BodyWidth = parseInt($(window).width());
+        x = (x + w) > BodyWidth ? (x - parseInt(w / 2)) : x;
+        var y = parseInt(obj.offset().top);
+        var h = parseInt(obj.height());
+        y = y + h + 6;
+
+        mnu.css("left", x);
+        mnu.css("top", y);
+        mnu.css("position", "absolute");
+        mnu.css("z-index", "999999");
+        mnu.show();
+    }
+
+    );
+
+    $byid(aDiv).hover(
+        function () {
+        },
+        function () {
+            $byid(aDiv).hide();
+        }
+    );
+
+    $byid("HeaderTop").hover(
+        function () {
+            $byid(aDiv).hide();
+        },
+        function () {
+            $byid(aDiv).hide();
+        }
+    );
+
+
+
+}
+
+
+//-------------------------------- ASHX调用函数----------------------------------------
+function GetAjaxDataByKey(aHandler, aKey) {
+    //根据Key值，从后台服务程序取数据
+
+    // aKey     键值
+    // aHandler 后台服务程序，如ashx文件
+    // 返回字符串
+
+    //post命令中，中文不用编码处理
+
+    ajaxpath = getajaxpath();
+    var AjaxServerPage = ajaxpath + aHandler;
+
+    //key = escape(key);
+    var aObj = $.ajax({
+        type: "post",
+        url: AjaxServerPage,
+        async: false, //采用同步方式获取数据
+        data: {
+            "cmd": "get",
+            "key": aKey
+        },
+        datatype: "text"
+    });
+
+    var s = aObj.responseText.toString();
+    s = unescape(s);
+
+    var i = s.indexOf("</value>");
+    s = s.substring(0, i);
+    s = s.replace("<value>", "");
+
+    return s;
+}
+
+function GetAjaxStatus(aHandler, aCmd, aData) {
+    //根据Key值，从后台服务程序取数据
+
+    // aKey     键值
+    // aData	Json对象
+    // aHandler 后台服务程序，如ashx文件
+    // 返回字符串
+
+    //post命令中，中文不用编码处理
+
+    ajaxpath = getajaxpath();
+    var AjaxServerPage = ajaxpath + aHandler;
+
+    //key = escape(key);
+    var aObj = $.ajax({
+        type: "post",
+        url: AjaxServerPage,
+        async: false, //采用同步方式获取数据
+        data: {
+            "cmd": "get",
+            "key": aCmd,
+            "data": aData
+        },
+        datatype: "text"
+    });
+
+    var s = aObj.responseText.toString();
+    s = unescape(s);
+
+    var i = s.indexOf("</value>");
+    s = s.substring(0, i);
+    s = s.replace("<value>", "");
+
+    return s;
+}
+
+function PostAjaxDataByKey(aHandler, aKey, aData) {
+    //根据Key值，向后台服务程序提交数据
+
+    // aKey     键值
+    // aHandler 后台服务程序，如ashx文件
+    // aData    数据
+
+    //返回约定：-1 提交失败 1 提交成功 
+
+
+    //post命令中，中文不用编码处理
+
+    ajaxpath = getajaxpath();
+    var AjaxServerPage = ajaxpath + aHandler;
+
+    var aObj = $.ajax({
+        type: "post",
+        url: AjaxServerPage,
+        async: false,
+        data: {
+            "cmd": "post",
+            "key": aKey,
+            "data": aData
+        },
+        datatype: "text"
+    });
+
+    var s = aObj.responseText.toString();
+    s = unescape(s);
+    var i = s.indexOf("</value>");
+    s = s.substring(0, i);
+    s = s.replace("<value>", "");
+
+    return s;
+}
+

@@ -1,0 +1,543 @@
+﻿body
+{
+    padding: 0px;
+    font-family: 宋体;
+    font-size: 9pt;
+    font-weight: normal;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+
+table {
+	font-family: 宋体;
+	font-size: 9pt;
+	font-weight: normal;
+}
+
+
+tr {
+	font-family: 宋体;
+	font-size: 9pt;
+	font-weight: normal;
+}
+
+td {
+	font-family: 宋体;
+	font-size: 9pt;
+	font-weight: normal;
+}
+
+th {
+	font-family: 宋体;
+}
+
+a 
+{
+    border:none;
+    }
+    
+a:link 
+{
+    border:none;
+    } 
+    
+img{border:none;}       
+/* 去除图片超链接的边框 */
+
+.sunti9
+{
+    font-family: 宋体;
+    font-size: 9pt;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+}
+
+
+.sunti9_white
+{
+    font-family: 宋体;
+    font-size: 9pt;
+    font-weight: normal;
+    color: #FFFFFF;
+    vertical-align: middle;
+	 font: 9pt 宋体;
+}
+
+.sunti9_navy
+{
+    font-family: 宋体;
+    font-size: 9pt;
+    font-weight: normal;
+    color: #000066;
+    vertical-align: middle;
+    font: 9pt 宋体;
+}
+
+
+.sunti9_darkred
+{
+    font-family: 宋体;
+    font-size: 9pt;
+    font-weight: normal;
+    color: #990000;
+    vertical-align: middle;
+    font: 9pt 宋体;
+}
+
+
+.sunti9bold
+{
+    font-family: 宋体;
+    font-size: 9pt;
+    font-weight: bold;
+	 font: 9pt 宋体;
+}
+
+.loginbox {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	border: 1px solid #999999;
+	line-height: 14pt;
+	font: 9pt 宋体;
+	}
+	
+.cssMenuitem
+{
+    font-family: 宋体;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+    background-color: #000000;
+	 font: 9pt 宋体;
+}
+
+.white_link {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.black_link
+{
+    font-family: 宋体;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+    text-align: left;
+}
+
+.black_link:hover {
+	font-family: 宋体;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: #c00000;
+	cursor: pointer;
+	text-align: left;
+	
+}
+
+.notice_link {
+	font-family: 宋体;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: #5B0000;
+	cursor: pointer;
+	
+}
+
+.notice_link:hover {
+	font-family: 宋体;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: Blue;
+	cursor: pointer;
+	
+}
+
+.notice_link:visited {
+	font-family: 宋体;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000000;
+	cursor: pointer;
+	
+}
+
+
+.red_link {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #C00000;
+	text-decoration: none;
+	font: 9pt 宋体;
+	cursor: pointer;
+	
+}
+
+.red_link:hover {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #006400;
+	text-decoration: none;
+	font: 9pt 宋体;
+	cursor: pointer;
+	
+}
+
+.green_link {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #228B22;
+	text-decoration: none;
+	font: 9pt 宋体;
+	cursor: pointer;
+	
+}
+
+.OrderTopList {
+	BORDER-RIGHT: #cc9900 2px dotted;
+	BORDER-TOP: #cc9900 2px dotted;
+	LEFT: 659px;
+	BORDER-LEFT: #cc9900 2px dotted;
+	WIDTH: 291px;
+	BORDER-BOTTOM: #cc9900 2px dotted;
+	POSITION: absolute;
+	TOP: 22px;
+	HEIGHT: 370px;
+	padding-bottom: 8;
+	padding-left: 8;
+	padding-right: 8;
+	padding-top: 8;
+	overflow: auto;
+	display: none;
+	cursor: pointer;
+}
+
+.disablediv {
+	
+}
+
+.menuhoverstyle {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	color: #FFFFFF;
+	background-color: #0000CC;
+	font: 9pt 宋体;
+	cursor: pointer;
+}
+
+.menubar {
+	font-family: "宋体";
+	font-size: 9pt;
+	color: #339900;
+	background-color: #FFFFFF;
+	font-weight: bold;
+	font: 9pt 宋体;
+	cursor: pointer;
+}
+
+.blackbox {
+	border: 1px solid #666666;
+}
+
+.NoticePanel {
+	BORDER-RIGHT: gray 2px dotted;
+	PADDING-RIGHT: 8px;
+	BORDER-TOP: gray 2px dotted;
+	DISPLAY: none;
+	PADDING-LEFT: 8px;
+	Z-INDEX: 9999;
+	BACKGROUND: #ffffff;
+	LEFT: 8px;
+	PADDING-BOTTOM: 8px;
+	BORDER-LEFT: gray 2px dotted;
+	WIDTH: 419px;
+	PADDING-TOP: 8px;
+	BORDER-BOTTOM: gray 2px dotted;
+	POSITION: absolute;
+	TOP: 93px;
+	HEIGHT: 465px
+	display: none;
+}
+
+.NoticePopBox {
+	Z-INDEX: 9999;
+	overflow: auto;
+	WIDTH: 100%;
+	POSITION: relative;
+	HEIGHT: 397px;
+	background: White;
+	font-family: 宋体;
+	font-size: 9pt;
+}
+
+.PageHearLogo {
+	background-image: url(Images/mtlogo.gif);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: White;
+	width: 319px;
+	height: 76px;
+}
+
+.PageHearBg {
+	background-image: url(Images/titlebg.gif);
+	background-position: left;
+	background-repeat: repeat-x;
+	background-color: White;
+	/*height: 76px;*/
+}
+
+.PageHearBgLine {
+	background-image: url(Images/titlebg-line.gif);
+	background-position: left;
+	background-repeat: repeat-x;
+	background-color: White;
+	WIDTH: 100%; 
+	HEIGHT: 24px
+	/*height: 76px;*/
+}
+
+.PageTitle
+{
+    background-position: left top;
+    background-image: url('images/Pagetitle.gif');
+    background-repeat: no-repeat;
+    width: 304px;
+    height: 60px;
+}
+
+.PageTitleBg
+{
+    background-image: url('images/PagetitleBg.gif');
+    background-repeat: repeat-x;
+    height: 89px;
+}
+
+.MenuSeparator
+{
+    background-position: center center;
+    background-image: url('images/menu/mSeparatorBack.png');
+    background-repeat: no-repeat;
+    width:17px;
+    height:29px;
+}
+
+
+.MenuDownArrow
+{
+    background-position: center center;
+    background-image: url('images/menu/mHorizontalPopOut.png');
+    background-repeat: no-repeat;
+    width: 17px;
+    height: 29px;
+}
+
+.MenuRightArrow
+{
+    background-position: center center;
+    background-image: url('images/menu/mVerPopOut.png');
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 12px;
+}
+
+
+.TabSheet_Title
+{
+    height: 29px;
+    background-position: top;
+    background-image: url('images/TabSheet_title.gif');
+    background-repeat: repeat-x;
+    width: auto;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.TabSheet_Title_Left
+{
+    background-position: right bottom;
+    width: 16px;
+    height: 29px;
+    background-image: url('images/TabSheet-Left.png');
+    background-repeat: no-repeat;
+}
+
+.TabSheet_Title_Right
+{
+    background-position: left bottom;
+    width: 16px;
+    height: 29px;
+    background-image: url('images/TabSheet-Right.png');
+    background-repeat: no-repeat;
+}
+
+.Graybox {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	border: 1px solid #708090;
+	margin: 0px;
+	padding: 2px 2px 2px 2px;
+	font: 9pt 宋体;
+	}
+
+.GrayBoxButton {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	border: 1px solid #677685;
+	margin: 0px;
+	padding: 2px 2px 2px 2px;
+	background-color: white;
+	text-align: center;
+	vertical-align: middle;
+	font: 9pt 宋体;
+	}
+	
+
+.buttonbox
+{
+    font-family: 宋体;
+    font-size: 9pt;
+    font-style: normal;
+    font-weight: normal;
+    border: 1px solid #a8a8a8;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #f5f5f5;
+    font: 9pt 宋体;
+}
+
+.whitebox {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	border: 1px solid #a8a8a8;
+	text-align: left;
+	background-color: #ffffff;
+	font: 9pt 宋体;
+	}
+
+
+.sunti9box {
+	font-family: 宋体;
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	border: 1px solid #a8a8a8;
+	vertical-align: middle;
+	font: 9pt 宋体;
+}
+
+.whitebutton {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	border: 1px solid #a8a8a8;
+	vertical-align: middle;
+	background-color: white;
+	font: 9pt 宋体;
+}
+
+.winclosebutton {
+	font-size: 9pt;
+	border: 1px solid #ffffff;
+	background-color: #993300;
+	color: #ffffff;
+	margin-bottom: 0;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	padding-top: 0;
+	font-family: Arial;
+}
+
+.dialog1 {
+	font-family: "宋体";
+	font-size: 9pt;
+	background: white;
+	background-color: transparent;
+	font: 9pt 宋体;
+}
+
+.redbox {
+	background-color: #B22222;
+}
+
+.redbutton {
+	font-family: "宋体";
+	font-size: 9pt;
+	font-style: normal;
+	font-weight: normal;
+	border: 1px solid #a8a8a8;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #AC0000;
+	margin: 0 0 0 0;
+	color: White;
+	border-color: #777777 #777777 #777777 #777777;
+	padding-top: 2;
+	}
+	
+.mainmenuitem
+{
+    padding: 3px 6px 3px 6px;
+    font-family: "宋体";
+    font-size: 9pt;
+    color: #FFFFFF;
+    cursor: pointer;
+    background-color: #971e21;
+}
+
+.mainmenuitem:hover
+{
+    padding: 3px 6px 3px 6px;
+    font-family: "宋体";
+    font-size: 9pt;
+    color: #971e21;
+    cursor: pointer;
+    height: 29px;
+    background-color: #FFFFFF;
+}
+
+.CrystallReturnButton
+{
+    z-index: 9999;
+    left: 1000px;
+    position: absolute;
+    top: 1px;
+    height: 20px;
+}

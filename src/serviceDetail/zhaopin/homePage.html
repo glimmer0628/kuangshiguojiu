@@ -1,0 +1,771 @@
+
+<!-- saved from url=(0025)http://b2b.emaotai.cn/zp/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="./res/DXR.axd"><title>
+    首页
+</title><link rel="icon" href="http://b2b.emaotai.cn/zp/hr.ico" type="image/x-icon"><link rel="shortcut icon" href="http://b2b.emaotai.cn/zp/hr.ico" type="image/x-icon"><link rel="stylesheet" type="text/css" href="./res/Site.css">
+    <script type="text/javascript" src="./res/jquery.js.下载"></script>
+    <script type="text/javascript" src="./res/jquery.timers.js.下载"></script>
+    <script type="text/javascript" src="./res/json.js.下载"></script>
+    <script type="text/javascript" src="./res/jlib.js.下载"></script>
+    <script type="text/javascript" src="./res/JSDate.js.下载"></script>
+    <script type="text/javascript" src="./res/idlib.js.下载"></script>
+    
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            // do something here
+            //SaveScreenHeight();
+        });
+
+        function getimgcode() {
+            //var randomnum = Math.random();
+            var getimagecode = document.getElementById("VerifyImg");
+            ajaxpath = getajaxpath();
+            getimagecode.src = ajaxpath + "GetVerifyCode.ashx?id=" + Math.random();
+            //注意必须加?id=" + Math.random();，使每次访问的地址不同，否则不能正确刷新
+        }
+
+        function OnOrgChanged(s,e) {
+            var key = cbxOrgs.GetValue();
+            UsersPanel.PerformCallback(key);
+        }
+    </script>
+    <link href="./res/Globe.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .cHeight
+        {
+            height: 500px;
+        }
+        div.divStyle1
+        {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        table.tableStyle1
+        {
+            width: 100%;
+            height: 100%;
+        }
+        .auto-style1
+        {
+            text-align: right;
+            height: 32px;
+        }
+        .auto-style2
+        {
+            width: 150px;
+            height: 32px;
+        }
+        .auto-style3
+        {
+            text-align: right;
+            height: 31px;
+        }
+        .auto-style5
+        {
+            height: 16px;
+        }
+        .auto-style6
+        {
+            height: 43px;
+        }
+        </style>  
+
+    <style type="text/css">
+        .auto-style2
+        {
+            width: 177px;
+            height: 38px;
+        }
+        .auto-style5
+        {
+            position:relative;
+            width: 503px;
+            top: 9px;
+            left: -4px;
+        }
+        .auto-style6
+        {
+            width: 106px;
+        }
+        .auto-style7
+        {
+            width: 90px;
+        }
+        .auto-style8
+        {
+            width: 106px;
+            height: 18px;
+        }
+        .auto-style9
+        {
+            width: 90px;
+            height: 18px;
+        }
+        .auto-style10
+        {
+            height: 18px;
+        }
+        .auto-style11
+        {
+            width: 75px;
+        }
+        .auto-style12
+        {
+            height: 18px;
+            width: 75px;
+        }
+        .auto-style13
+        {
+            width: 93px;
+        }
+        .auto-style14
+        {
+            height: 18px;
+            width: 93px;
+        }
+    </style>
+<style></style></head>
+<body cz-shortcut-listen="true">
+    <form name="aspnetForm" method="post" action="http://b2b.emaotai.cn/zp/" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTc2NTAzMjg3Ng9kFgJmD2QWAgIDD2QWAgIBD2QWAgIBD2QWBAIBD2QWCgIBDzwrAAQBAA8WAh4HVmlzaWJsZWhkZAIDDzwrAAQBAA8WAh8AaGRkAgUPPCsABAEADxYCHwBoZGQCBw88KwAEAQAPFgIfAGhkZAILD2QWBAIBDzwrAAQBAA8WAh4FVmFsdWUFBummlumhtWRkAgMPZBYCAgEPPCsAFgEADxYEHgxLZXlGaWVsZE5hbWUFBGpoYmgeD0RhdGFTb3VyY2VCb3VuZGdkZAIDD2QWAgIBD2QWBGYPPCsABAEADxYCHwEFBjQwMjAwMGRkAgEPPCsABAEADxYCHwEFBzIwNzMyMjhkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBwUTY3RsMDAkTmF2aWdhdGlvbkJhcgUbY3RsMDAkQ29udGVudEhvbGRlciRSZWdMaXN0BS9jdGwwMCRDb250ZW50SG9sZGVyJFJlZ0xpc3QkY3RsMDAkRFhFZGl0b3IyJERERAU1Y3RsMDAkQ29udGVudEhvbGRlciRSZWdMaXN0JGN0bDAwJERYRWRpdG9yMiREREQkQyRGTlAFHGN0bDAwJENvbnRlbnRIb2xkZXIkYnRubG9naW4FG2N0bDAwJENvbnRlbnRIb2xkZXIkYnRuRXhpdAUOY3RsMDAkTXNnUG9wdXCRolkwibquyPTh4W09Ef+YUU1lTSvoQKJ6V5nsP9Vmzg==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./res/WebResource.axd" type="text/javascript"></script>
+
+ <script type="text/javascript"> 
+ <!-- 
+ function getroot() {
+   var lroot = "/zp";
+   if (lroot == "/") lroot = "";
+   lroot = "http://" + window.location.host + lroot + "/"; 
+   return lroot; 
+ } 
+
+ function getajaxpath() { 
+   var lroot = "/zp";
+   if (lroot == "/") lroot = "";
+   var lajaxpath = "http://" + window.location.host + lroot + "/ajax/"; 
+   return lajaxpath; 
+ } 
+
+ function getscriptpath() { 
+   var lroot = "/zp";
+   if (lroot == "/") lroot = "";
+   var lscriptpath = "http://" + window.location.host + lroot + "/script/"; 
+   return lscriptpath; 
+ } 
+ //--> 
+ </script> 
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAANTDY1gvNgg2KosrOCymMTGyrEqQZJsEgRj+qmeai61xgOUr3D+eMnWKKEovuo2AiRfslJf0QkVJRCb8fsDgoCR8ohua7DNG+nWiibhVaxhGw==">
+</div>
+    <div class="MainBackground" id="GlobalHolder">
+        <div id="ctl00_Wrapper_Transient" class="Wrapper">
+            <div id="ctl00_Content_Transient" class="Content">
+                <div class="ContentRight">
+                    <div id="ctl00_ContentLeft_Transient" class="ContentLeft">
+                        <div class="ContentLeftInner">
+                            <div class="TitleLogo">
+                                <div class="auto-style2" src=""></div></div>
+                            <div class="Navigation">
+                                <table style="width: 240px">
+                                    <tbody><tr>
+                                        <td align="right" style="width: 70px;">
+                                            
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            
+                                        </td>
+                                        <td>
+                                            
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                            <div class="Navigation">
+                                <input type="hidden" id="ctl00_NavigationBarGS" name="ctl00_NavigationBarGS" value="1;1;1;1;1;1"><script id="dxis_1435626555" src="./res/DXR(1).axd" type="text/javascript"></script><script id="dxss_259466622" type="text/javascript">
+<!--
+window.__aspxServerFormID = 'aspnetForm';
+
+//-->
+</script><ul class="NavigationBar" id="ctl00_NavigationBar">
+	<li class="dxnb-gr"><div class="dxnb-header" onclick="aspxNBHClick(event, &#39;ctl00_NavigationBar&#39;, 0)" id="ctl00_NavigationBar_GHE0">
+		<img class="dxWeb_nbCollapse dxnb-btn" src="./res/DXR(2).axd" alt=""><a class="dxalink">公告信息</a>
+	</div><div class="dxnb-headerCollapsed" onclick="aspxNBHClick(event, &#39;ctl00_NavigationBar&#39;, 0)" style="display:none;" id="ctl00_NavigationBar_GHC0">
+		<img class="dxWeb_nbExpand dxnb-btn" src="./res/DXR(2).axd" alt=""><a class="dxalink">公告信息</a>
+	</div><ul class="dxnb-content dxnb-left" id="ctl00_NavigationBar_GC0">
+		<li class="dxnb-item dxnb-itemSelected" id="ctl00_NavigationBar_I0i0_"><a class="dxalink">首页</a></li>
+	</ul></li><li class="dxnb-gr"><div class="dxnb-header" onclick="aspxNBHClick(event, &#39;ctl00_NavigationBar&#39;, 1)" id="ctl00_NavigationBar_GHE1">
+		<img class="dxWeb_nbCollapse dxnb-btn" src="./res/DXR(2).axd" alt=""><a class="dxalink">招聘活动</a>
+	</div><div class="dxnb-headerCollapsed" onclick="aspxNBHClick(event, &#39;ctl00_NavigationBar&#39;, 1)" style="display:none;" id="ctl00_NavigationBar_GHC1">
+		<img class="dxWeb_nbExpand dxnb-btn" src="./res/DXR(2).axd" alt=""><a class="dxalink">招聘活动</a>
+	</div></li><li class="dxnb-gr"><div class="dxnb-header" onclick="aspxNBHClick(event, &#39;ctl00_NavigationBar&#39;, 4)" id="ctl00_NavigationBar_GHE4">
+		<img class="dxWeb_nbCollapse dxnb-btn" src="./res/DXR(2).axd" alt=""><a class="dxalink">软件下载</a>
+	</div><div class="dxnb-headerCollapsed" onclick="aspxNBHClick(event, &#39;ctl00_NavigationBar&#39;, 4)" style="display:none;" id="ctl00_NavigationBar_GHC4">
+		<img class="dxWeb_nbExpand dxnb-btn" src="./res/DXR(2).axd" alt=""><a class="dxalink">软件下载</a>
+	</div><ul class="dxnb-content dxnb-left" id="ctl00_NavigationBar_GC4">
+			</ul></li>
+</ul><b class="dx-clear"></b><script id="dxss_1861692467" type="text/javascript">
+<!--
+aspxAddHoverItems('ctl00_NavigationBar',[[['dxnb-headerHover'],[''],['GHE0','GHE1','GHE4']],[['dxnb-headerCollapsedHover'],[''],['GHC0','GHC1','GHC4']]]);
+aspxAddDisabledItems('ctl00_NavigationBar',[[[''],[''],['I0i0_','I0i1_','I4i0_','I4i1_'],,[[''],[''],[''],['']],['Img']]]);
+
+var dxo = new ASPxClientNavBar('ctl00_NavigationBar');
+window['NavigationBar'] = dxo;
+dxo.uniqueID = 'ctl00$NavigationBar';
+dxo.RegisterServerEventAssigned(['ItemClick']);
+dxo.groupsExpanding=[true,true,true,true,true,true];
+dxo.liteRender=true;
+dxo.CreateGroups([['nvNotice',,,,[['nvHome',,,,],['nvSupport',,,,]]],['nvRegList',,,,[]],['nvReg',,false,,[['nvDoc',,,,],['nvUpLoadZp',,,,],['nvUploadId',,,,],['nvUploadHk',,,,],['nvUploadByz',,,,],['nvUploadXwz',,,,],['nvUploadXwz',,,,],['nvConfirmOK',,,,]]],['nvQuery',,false,,[['',,,,],['',,,,],['',,,,]]],['nvTools',,,,[['',,,,],['',,,,]]],['nvSys',,false,,[['',,,,]]]]);
+dxo.InlineInitialize();
+
+//-->
+</script>
+                            </div>
+                        </div>
+                        <div id="ctl00_ContentCenter_Transient" class="ContentCenter">
+                            <div class="ContentCenterInner">
+                                <div class="TabsArea">
+                                </div>
+                                <div class="RegTitle">
+                                    <label class="dxeBase" id="ctl00_lbTitle" style="color:#333333;font-family:微软雅黑;font-size:14pt;font-weight:bold;">首页</label>
+                                </div>
+                                <div id="WorkArea">
+                                    
+    <table style="width: 766px; height: 100%">
+        <tbody><tr>
+            <td align="center" style="height: 25px">
+                <table class="dxgvControl" cellspacing="0" cellpadding="0" id="ctl00_ContentHolder_RegList" border="0" style="border-style:None;font-weight:bold;width:90%;border-collapse:collapse;border-collapse:separate;border-bottom-color:#CCCCCC;border-bottom-style:Dotted;border-bottom-width:2px;">
+	<tbody><tr>
+		<td><table id="ctl00_ContentHolder_RegList_DXMainTable" class="dxgvTable" cellspacing="0" cellpadding="0" border="0" style="font-weight:bold;width:100%;border-collapse:collapse;empty-cells:show;">
+			<tbody><tr class="dxgvEmptyDataRow" style="font-weight:bold;">
+				<td class="dxgv" colspan="4" style="border-bottom-width:0px;"><div>
+					没有数据
+				</div></td>
+			</tr>
+		</tbody></table><img id="ctl00_ContentHolder_RegList_IADD" class="dxGridView_gvDragAndDropArrowDown" src="./res/DXR(2).axd" alt="|" style="position:absolute;visibility:hidden;top:-100px;"><img id="ctl00_ContentHolder_RegList_IADU" class="dxGridView_gvDragAndDropArrowUp" src="./res/DXR(2).axd" alt="|" style="position:absolute;visibility:hidden;top:-100px;"><img id="ctl00_ContentHolder_RegList_IDHF" class="dxGridView_gvDragAndDropHideColumn" src="./res/DXR(2).axd" alt="隐藏" style="position:absolute;visibility:hidden;top:-100px;"><table id="ctl00_ContentHolder_RegList_LP" class="dxgvLoadingPanel" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;left:0px;top:0px;z-index:30000;display:none;">
+			<tbody><tr>
+				<td class="dx"><img src="./res/DXR(3).axd" alt="" align="middle"></td><td class="dx" style="padding-left:0px;">加载中…</td>
+			</tr>
+		</tbody></table><div id="ctl00_ContentHolder_RegList_LD" class="dxgvLoadingDiv" style="display:none;z-index:29999;position:absolute;">
+
+		</div><input type="hidden" name="ctl00$ContentHolder$RegList$DXSelInput" id="ctl00_ContentHolder_RegList_DXSelInput"><table id="ctl00_ContentHolder_RegList_DXStyleTable" border="0" style="display:none;">
+			<tbody><tr>
+				<td></td>
+			</tr><tr class="dxgvEditingErrorRow">
+				<td class="dxgv" colspan="4" style="border-right-width:0px;"></td>
+			</tr><tr class="dxgvSelectedRow" style="font-weight:bold;">
+				<td></td>
+			</tr><tr class="dxgvFocusedRow" style="font-weight:bold;">
+				<td></td>
+			</tr><tr class="dxgvFocusedGroupRow" style="font-weight:bold;">
+				<td></td>
+			</tr>
+		</tbody></table><input type="hidden" name="ctl00$ContentHolder$RegList$CallbackState" id="ctl00_ContentHolder_RegList_CallbackState" value="/wEWBB4ERGF0YQV4QUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUF3QUFBQVJxYUdKb0JHcG9ZbWdIQUFBRWNYTnljUVJ4YzNKeENBQUFBM1Z5YkFOMWNtd0hBQUFEQUFBQUJYUnBkR3hsQjI5d2RHbDBiR1VFZW1SeWNRY0FCd0E9HgVTdGF0ZQVUQndRSEFBSUJCd0lDQVFjREFnRUhCQUlCQndBSEFBY0FCd0FGQUFBQWdBa0NCR3BvWW1nSkFnQUNBQU1IQkFJQUJ3QUNBUWNBQndBQ0FRY0FCd0E9"></td>
+	</tr>
+</tbody></table><script id="dxss_297399869" type="text/javascript">
+<!--
+
+var dxo = new ASPxClientGridView('ctl00_ContentHolder_RegList');
+window['ctl00_ContentHolder_RegList'] = dxo;
+dxo.callBack = function(arg) { WebForm_DoCallback('ctl00$ContentHolder$RegList',arg,aspxCallback,'ctl00_ContentHolder_RegList',aspxCallbackError,true); };
+dxo.uniqueID = 'ctl00$ContentHolder$RegList';
+dxo.callBacksEnabled=true;
+dxo.pageRowCount=0;
+dxo.pageRowSize=10;
+dxo.pageIndex=-1;
+dxo.pageCount=0;
+dxo.selectedWithoutPageRowCount=0;
+dxo.visibleStartIndex=0;
+dxo.focusedRowIndex=-1;
+dxo.allowFocusedRow=false;
+dxo.allowSelectByRowClick=false;
+dxo.allowSelectSingleRowOnly=false;
+dxo.isColumnsResizable=false;
+dxo.isVerticalScrolling=false;
+dxo.isHorizontalScrolling=false;
+dxo.isMainControlResizable=false;
+dxo.indentColumnCount=0;
+dxo.callbackOnFocusedRowChanged=false;
+dxo.callbackOnSelectionChanged=false;
+dxo.autoFilterDelay='1200';
+dxo.columns = [new ASPxClientGridViewColumn('',0,-1,'',1,'',0,0,1,0),
+new ASPxClientGridViewColumn('',1,-1,'url',1,'',1,1,1,0),
+new ASPxClientGridViewColumn('',2,-1,'qsrq',1,'',1,1,1,0),
+new ASPxClientGridViewColumn('',3,-1,'url',1,'',1,1,1,0)];
+dxo.keys=[];
+dxo.editState=0;
+dxo.InlineInitialize();
+
+//-->
+</script>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <div style="width: 700px; height: 526px; background-image: url(res/login.png); position: relative;">
+                    <table style="position: absolute; top: 192px; left: 276px; width: 232px; z-index: 9999;">
+                        <tbody><tr>
+                            <td class="auto-style1" style="width: 61px">
+                                注册号：
+                            </td>
+                            <td align="left" style="width: 170px">
+                                 <table class="dxeTextBoxSys dxeTextBox" cellspacing="0" cellpadding="0" id="ctl00_ContentHolder_tbxUserId" border="0" style="width:120px;border-collapse:collapse;">
+	<tbody><tr>
+		<td class="dxic" style="width: 100%; padding: 2px; white-space: normal;"><input class="dxeEditArea dxeEditAreaSys" id="ctl00_ContentHolder_tbxUserId_I" name="ctl00$ContentHolder$tbxUserId" onfocus="aspxEGotFocus(&#39;ctl00_ContentHolder_tbxUserId&#39;)" onblur="aspxELostFocus(&#39;ctl00_ContentHolder_tbxUserId&#39;)" onkeydown="aspxEKeyDown(&#39;ctl00_ContentHolder_tbxUserId&#39;, event)" onkeyup="aspxEKeyUp(&#39;ctl00_ContentHolder_tbxUserId&#39;, event)" type="text" style="color:#990000;font-family:宋体;font-size:9pt;"></td>
+	</tr>
+</tbody></table><script id="dxss_1459846482" type="text/javascript">
+<!--
+aspxAddDisabledItems('ctl00_ContentHolder_tbxUserId',[[['dxeDisabled'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('ctl00_ContentHolder_tbxUserId');
+window['tbxUserId'] = dxo;
+dxo.uniqueID = 'ctl00$ContentHolder$tbxUserId';
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused','');
+dxo.InlineInitialize();
+
+//-->
+</script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style3" style="width: 61px">
+                                密码：
+                            </td>
+                            <td align="left" style="width: 170px">
+                                <table class="dxeTextBoxSys dxeTextBox" cellspacing="0" cellpadding="0" id="ctl00_ContentHolder_tbxPassword" border="0" style="width:120px;border-collapse:collapse;">
+	<tbody><tr>
+		<td class="dxic" style="width: 100%; padding: 2px; white-space: normal;"><input class="dxeEditArea dxeEditAreaSys" id="ctl00_ContentHolder_tbxPassword_I" name="ctl00$ContentHolder$tbxPassword" onfocus="aspxEGotFocus(&#39;ctl00_ContentHolder_tbxPassword&#39;)" onblur="aspxELostFocus(&#39;ctl00_ContentHolder_tbxPassword&#39;)" onkeydown="aspxEKeyDown(&#39;ctl00_ContentHolder_tbxPassword&#39;, event)" onkeyup="aspxEKeyUp(&#39;ctl00_ContentHolder_tbxPassword&#39;, event)" type="password" style="color:#990000;font-family:宋体;font-size:9pt;"></td>
+	</tr>
+</tbody></table><script id="dxss_1437951046" type="text/javascript">
+<!--
+aspxAddDisabledItems('ctl00_ContentHolder_tbxPassword',[[['dxeDisabled'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('ctl00_ContentHolder_tbxPassword');
+window['tbxPassword'] = dxo;
+dxo.uniqueID = 'ctl00$ContentHolder$tbxPassword';
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused','');
+dxo.InlineInitialize();
+
+//-->
+</script>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style3" style="width: 61px">
+                                验证码：</td>
+                            <td align="left" style="width: 170px">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td>
+                                            <table title="请输入验证图片中的字符，不区分大小写！" class="dxeTextBoxSys dxeTextBox" cellspacing="0" cellpadding="0" id="ctl00_ContentHolder_edtVerifyCode" border="0" style="width:60px;border-collapse:collapse;">
+	<tbody><tr>
+		<td class="dxic" style="width: 100%; padding: 2px; white-space: normal;"><input class="dxeEditArea dxeEditAreaSys" name="ctl00$ContentHolder$edtVerifyCode" onkeyup="aspxEKeyUp(&#39;ctl00_ContentHolder_edtVerifyCode&#39;, event)" maxlength="6" id="ctl00_ContentHolder_edtVerifyCode_I" onblur="aspxELostFocus(&#39;ctl00_ContentHolder_edtVerifyCode&#39;)" onfocus="aspxEGotFocus(&#39;ctl00_ContentHolder_edtVerifyCode&#39;)" type="text" onkeydown="aspxEKeyDown(&#39;ctl00_ContentHolder_edtVerifyCode&#39;, event)" style="height:15px;"></td>
+	</tr>
+</tbody></table><script id="dxss_1801219714" type="text/javascript">
+<!--
+aspxAddDisabledItems('ctl00_ContentHolder_edtVerifyCode',[[['dxeDisabled'],[''],['','I']]]);
+
+var dxo = new ASPxClientTextBox('ctl00_ContentHolder_edtVerifyCode');
+window['edtVerifyCode'] = dxo;
+dxo.uniqueID = 'ctl00$ContentHolder$edtVerifyCode';
+dxo.RequireStyleDecoration();
+dxo.styleDecoration.AddStyle('F','dxeFocused','');
+dxo.InlineInitialize();
+
+//-->
+</script>
+                                        </td>
+                                        <td style="width:8px">
+                                           </td>
+                                        <td>
+                                            <a title="看不清？点击更换" id="VerifyLink">
+                                            <img id="VerifyImg" alt="看不清？点击更换" src="./res/GetVerifyCode.ashx"></a></td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">
+                                <table cellpadding="0" cellspacing="0">
+                                    <tbody><tr>
+                                        <td align="center">
+                                            &nbsp;</td>
+                                        <td align="center" width="20">
+                                            &nbsp;</td>
+                                        <td align="center">
+                                            &nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <table cellspacing="0" cellpadding="0" id="ctl00_ContentHolder_btnlogin" border="0" style="width:60px;border-collapse:collapse;border-collapse:separate;-khtml-user-select:none;">
+	<tbody><tr>
+		<td id="ctl00_ContentHolder_btnlogin_B" class="dxbButton" align="center" style="font-size:9pt;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;"><div style="border-width:0;width:0;height:0;opacity:0;padding:0;margin:0;overflow:hidden;">
+			<input value="" onfocus="aspxBGotFocus(&#39;ctl00_ContentHolder_btnlogin&#39;)" name="ctl00$ContentHolder$btnlogin" type="submit" readonly="readonly" style="border-width:0px;height:0px;width:0px;padding:0;border-width:0;width:1px;height:1px;opacity:0;margin:0;position:relative;">
+		</div><div id="ctl00_ContentHolder_btnlogin_CD" class="dxb">
+			<span>登录</span>
+		</div></td>
+	</tr>
+</tbody></table><script id="dxss_711672002" type="text/javascript">
+<!--
+aspxAddHoverItems('ctl00_ContentHolder_btnlogin',[[['dxbButtonHover'],['padding-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;'],['B'],['','TC'],[['']],['Img']]]);
+aspxAddPressedItems('ctl00_ContentHolder_btnlogin',[[['dxbButtonPressed'],['padding-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;'],['B'],['','TC'],[['']],['Img']]]);
+aspxAddDisabledItems('ctl00_ContentHolder_btnlogin',[[['dxbDisabled'],[''],['B'],['','TC'],[['']],['Img']]]);
+
+var dxo = new ASPxClientButton('ctl00_ContentHolder_btnlogin');
+window['btnlogin'] = dxo;
+dxo.autoPostBack = true;
+dxo.uniqueID = 'ctl00$ContentHolder$btnlogin';
+dxo.RegisterServerEventAssigned(['Click']);
+aspxAddSelectedItems('ctl00_ContentHolder_btnlogin',[[['dxbf'],[''],['CD']]]);
+dxo.InlineInitialize();
+
+//-->
+</script>
+                                        </td>
+                                        <td align="center" width="20">
+                                            &nbsp;
+                                        </td>
+                                        <td align="center">
+                                            <table cellspacing="0" cellpadding="0" id="ctl00_ContentHolder_btnExit" border="0" style="width:60px;border-collapse:collapse;border-collapse:separate;-khtml-user-select:none;">
+	<tbody><tr>
+		<td id="ctl00_ContentHolder_btnExit_B" class="dxbButton" align="center" style="font-size:9pt;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;"><div style="border-width:0;width:0;height:0;opacity:0;padding:0;margin:0;overflow:hidden;">
+			<input value="" onfocus="aspxBGotFocus(&#39;ctl00_ContentHolder_btnExit&#39;)" name="ctl00$ContentHolder$btnExit" type="submit" readonly="readonly" style="border-width:0px;height:0px;width:0px;padding:0;border-width:0;width:1px;height:1px;opacity:0;margin:0;position:relative;">
+		</div><div id="ctl00_ContentHolder_btnExit_CD" class="dxb">
+			<span>退出</span>
+		</div></td>
+	</tr>
+</tbody></table><script id="dxss_1801557620" type="text/javascript">
+<!--
+aspxAddHoverItems('ctl00_ContentHolder_btnExit',[[['dxbButtonHover'],['padding-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;'],['B'],['','TC'],[['']],['Img']]]);
+aspxAddPressedItems('ctl00_ContentHolder_btnExit',[[['dxbButtonPressed'],['padding-left:0px;padding-top:0px;padding-right:0px;padding-bottom:0px;'],['B'],['','TC'],[['']],['Img']]]);
+aspxAddDisabledItems('ctl00_ContentHolder_btnExit',[[['dxbDisabled'],[''],['B'],['','TC'],[['']],['Img']]]);
+
+var dxo = new ASPxClientButton('ctl00_ContentHolder_btnExit');
+window['btnExit'] = dxo;
+dxo.autoPostBack = true;
+dxo.uniqueID = 'ctl00$ContentHolder$btnExit';
+dxo.RegisterServerEventAssigned(['Click']);
+aspxAddSelectedItems('ctl00_ContentHolder_btnExit',[[['dxbf'],[''],['CD']]]);
+dxo.InlineInitialize();
+
+//-->
+</script>
+                                        </td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                        </tr>
+                    </tbody></table>
+                    <span id="ctl00_ContentHolder_Label2" style="font-size:9pt;font-weight:normal;z-index: 1; left: 147px; top: 502px; position: absolute">视聆通设计 CopyRight 2012</span>
+                    <img id="ctl00_ContentHolder_Image3" src="./res/slt.gif" style="border-width:0px;z-index: 1; left: 127px; top: 498px; position: absolute">
+                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" class="auto-style5">
+                </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top">
+                
+                <table>
+                    <tbody><tr>
+                        <td align="left" class="auto-style6">
+                            <strong style="font-family: 微软雅黑; font-size: 14pt; font-weight: bold">网上报名材料要求：</strong></td>
+                    </tr>
+                    <tr>
+                        <td align="left">为保证您的报名信息准确，请仔细阅读以下报名资料的各项要求：</td>
+                    </tr>
+                    <tr>
+                        <td align="left">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td align="left" style="font-family: 宋体; font-size: 9pt"><strong>一、个人基本信息</strong> &nbsp;　　<br>
+                            　　姓名、身份证号、出生日期、性别、年龄、婚姻状况、民族、籍贯、户籍（户口所在地）、家庭地址、<br>
+                            联系电话、电子信箱、学历、毕业证号、毕业学校、毕业时间、所学专业、个人简历、个人自述；<br>
+&nbsp;&nbsp;&nbsp; 另职称、工作单位、政治面貌作为可选项，可以不填； <strong>
+                            <br>
+                            <br>
+                            二、需要扫描上传的证件及图片处理要求</strong>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　１、<strong>照片：</strong>照片使用本月内免冠蓝底二寸（3.5×5cm）证件照片；上传图片要求：</p>
+                            <p>
+                                　　　　　　文件格式：jpg文件</p>
+                            <p>
+                                　　　　　　尺寸大小：<span><strong>分辨率：72像素/英寸、宽：206像素、高：266像素</strong></span></p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　２、<strong>身份证：身份证正面在上、反面在下放在一张图中上传</strong>；上传图片要求：</p>
+                            <p>
+                                　　　　　　文件格式：jpg文件</p>
+                            <p>
+                                　　　　　　尺寸大小：<strong>分辨率：72像素/英寸，宽400像素，高520像素</strong></p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　３、<strong>户口：</strong>选用本人页即可，上传图片要求：</p>
+                            <p>
+                                　　　　　　文件格式：jpg文件</p>
+                            <p>
+                                　　　　　　尺寸大小：<span><strong>分辨率：72像素/英寸，宽500像素，高度自定，须保持图片比例</strong></span></p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　４、<strong>毕业证：</strong>上传图片要求：</p>
+                            <p>
+                                　　　　　　文件格式：jpg文件</p>
+                            <p>
+                                　　　　　　尺寸大小：<span><strong>分辨率：72像素/英寸，宽500像素，高度自定，须保持图片比例</strong></span></p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　５、<strong>学位证：</strong>上传图片要求：</p>
+                            <p>
+                                　　　　　　文件格式：jpg文件</p>
+                            <p>
+                                　　　　　　尺寸大小：<span><strong>分辨率：72像素/英寸，宽500像素，高度自定，须保持图片比例</strong></span></p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　６、<strong>职称及从业资格证：</strong>上传图片要求：</p>
+                            <p>
+                                　　　　　　文件格式：jpg文件</p>
+                            <p>
+                                　　　　　　尺寸大小：<span><strong>分辨率：72像素/英寸，宽500像素，高度自定，须保持图片比例</strong></span></p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                <strong>三、网上报名办理流程</strong></p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　<strong>１、资料准备：</strong>按上述要求准备好各项资料、图片；</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　<strong>２、报名期限：应聘者按相关招聘活动的期限完成报名。</strong></p>
+                            <p>
+                                　　　　　　　　　</p>
+                            <p>
+                                　　<strong>３、报名方法：</strong></p>
+                            <p>
+                                　　　　　　（１）注册报名账户；</p>
+                            <p>
+                                　　　　　　（２）填写相关资料，上传各项图片；</p>
+                            <p>
+                                　　　　　　（３）检查无误后，提交报名资料；</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　<strong>４、报名审核查询：</strong>　</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　&nbsp;&nbsp;&nbsp;&nbsp; 应聘者提交报名资料后，等待人事部门进行资料审核，审核结果通过“审核、考试、录用查询”</p>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 功能下的“查询审核情况”进行查询。</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　&nbsp;&nbsp;&nbsp;&nbsp; 审核通过的，请按照相关招聘活动的文件规定办理后续手续。</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                　　<strong>５、考试录用查询：</strong></p>
+                            <p>
+                                　　</p>
+                            <p>
+                                　　&nbsp;&nbsp;&nbsp;&nbsp; 应聘者参加考试后，在相关招聘工作结束前，可登录本网站查询考试成绩及录用结果。　</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                &nbsp;</p>
+                            <p>
+                                <span><strong>&nbsp;&nbsp;&nbsp; 温馨提示：</strong></span>没有图像软件的请从左边菜单下载“美图秀秀”，另建议使用Google Chrome浏览器</p>
+                            <p>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 操作本系统。</p>
+                            <p>
+                                　　　　　　　 &nbsp;</p>
+                            <p>
+                                &nbsp;</p>
+                        </td>
+                    </tr>
+                </tbody></table>
+                
+            </td>
+        </tr>
+        <tr>
+            <td align="center" valign="top" class="auto-style5">
+                
+                &nbsp;</td>
+        </tr>
+    </tbody></table>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ContentRightInner">
+                    </div>
+                </div>
+                <div class="FooterRight">
+                    <div id="ctl00_FooterLeft_Transient" class="FooterLeft">
+                        <div class="FooterLeftInner">
+                        </div>
+                        <div id="ctl00_FooterCenter_Transient" class="FooterCenter">
+                            <div class="FooterText" align="center">
+                                <table class="auto-style5">
+                                    <tbody><tr>
+                                        <td class="auto-style6" style="width: 137px">&nbsp;</td>
+                                        <td class="auto-style7">&nbsp;</td>
+                                        <td style="width: 53px">&nbsp;</td>
+                                        <td class="auto-style11">&nbsp;</td>
+                                        <td class="auto-style13">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="auto-style6" style="width: 137px">&nbsp;</td>
+                                        <td class="auto-style7">&nbsp;</td>
+                                        <td style="width: 53px">&nbsp;</td>
+                                        <td class="auto-style11">&nbsp;</td>
+                                        <td class="auto-style13">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="auto-style6" nowrap="nowrap" style="width: 137px">网站访问人次数：</td>
+                                        <td align="left" class="auto-style7" nowrap="nowrap">
+                                            <label class="dxeBase" id="ctl00_lbSiteCount" style="color:#990000;">0</label>
+                                        </td>
+                                        <td style="width: 53px">&nbsp;</td>
+                                        <td align="right" class="auto-style11" nowrap="nowrap">网页点击率：</td>
+                                        <td align="left" class="auto-style13" nowrap="nowrap">
+                                            <label class="dxeBase" id="ctl00_lbSiteClick" style="color:#990000;">0</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="auto-style8" style="width: 137px"></td>
+                                        <td align="left" class="auto-style9">&nbsp;</td>
+                                        <td class="auto-style10" style="width: 53px"></td>
+                                        <td class="auto-style12"></td>
+                                        <td class="auto-style14"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="auto-style6" style="width: 137px">&nbsp;</td>
+                                        <td class="auto-style7">&nbsp;</td>
+                                        <td style="width: 53px">&nbsp;</td>
+                                        <td class="auto-style11">&nbsp;</td>
+                                        <td class="auto-style13">&nbsp;</td>
+                                    </tr>
+                                </tbody></table>
+                            </div>
+                            <div class="Copyright">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <b class="Clear">&nbsp;</b>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="ctl00_MsgPopupWS" name="ctl00_MsgPopupWS" value="0:0:-1:-10000:-10000:0:500px:300px:1"><div id="ctl00_MsgPopup_PW-1" style="position:absolute;left:0px;top:0px;z-index:10000;visibility:hidden;display:none;">
+	<table id="ctl00_MsgPopup_PWST-1" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;border-collapse:separate;position:relative;">
+		<tbody><tr>
+			<td class="dxpcControl_SoftOrange" onmousedown="aspxPWMDown(event,&#39;ctl00_MsgPopup&#39;,-1,false)" style="height:300px;width:500px;cursor:default;"><table id="ctl00_MsgPopup_CLW-1" cellspacing="0" cellpadding="0" border="0" style="height:300px;width:500px;border-collapse:collapse;border-collapse:separate;">
+				<tbody><tr>
+					<td id="ctl00_MsgPopup_PWH-1" class="dxpcHeader_SoftOrange" onmousedown="aspxPWDGMDown(event,&#39;ctl00_MsgPopup&#39;,-1)" style="color:Black;font-family:微软雅黑;font-size:11pt;font-weight:bold;cursor:move;padding-left:12px;padding-right:2px;padding-top:3px;padding-bottom:3px;-khtml-user-select:none;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;border-collapse:collapse;border-collapse:separate;">
+						<tbody><tr>
+							<td id="ctl00_MsgPopup_PWH-1T" class="dxpc" style="color:Black;font-family:微软雅黑;font-size:11pt;font-weight:bold;width:100%;">警告</td><td style="padding-left:4px;"><table cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;border-collapse:separate;">
+								<tbody><tr>
+									<td id="ctl00_MsgPopup_HCB-1" class="dxpcCloseButton_SoftOrange" onclick="aspxPWCBClick(event, &#39;ctl00_MsgPopup&#39;,-1)" onmousedown="return aspxPWCBMDown(event);" style="cursor:pointer;"><img id="ctl00_MsgPopup_HCB-1Img" class="dxWeb_pcCloseButton_SoftOrange" src="./res/DXR(2).axd" alt="[关闭]"></td>
+								</tr>
+							</tbody></table></td>
+						</tr>
+					</tbody></table></td>
+				</tr><tr>
+					<td id="ctl00_MsgPopup_PWC-1" class="dxpcContent_SoftOrange" style="color:#CC0000;font-family:微软雅黑;font-size:11pt;font-weight:bold;height:100%;border-top-width:0px;"><div id="ctl00_MsgPopup_CSD-1" class="dxpcContentPaddings_SoftOrange">
+						&nbsp;&nbsp;
+					</div></td>
+				</tr>
+			</tbody></table></td><td style="background:url(&#39;/zp/DXR.axd?r=1_25-8GMud&#39;) no-repeat left top;"></td>
+		</tr><tr>
+			<td style="background:url(&#39;/zp/DXR.axd?r=1_24-8GMud&#39;) no-repeat left top;"></td><td style="background:url(&#39;/zp/DXR.axd?r=1_26-8GMud&#39;) no-repeat left top;"><div style="height:5px;width:5px;">
+
+			</div></td>
+		</tr>
+	</tbody></table>
+</div><table id="ctl00_MsgPopup_LP" class="dxpcLoadingPanel_SoftOrange" cellspacing="0" cellpadding="0" border="0" style="border-collapse:collapse;left:0px;top:0px;z-index:30000;display:none;">
+	<tbody><tr>
+		<td class="dx"><img src="./res/DXR(4).axd" alt="" align="middle" style="margin-bottom:8px;"><br>加载中…</td>
+	</tr>
+</tbody></table><div id="ctl00_MsgPopup_LD" class="dxpcLoadingDiv_SoftOrange" style="left:0px;top:0px;z-index:29999;display:none;position:absolute;">
+
+</div><script id="dxss_1906808464" type="text/javascript">
+<!--
+aspxAddHoverItems('ctl00_MsgPopup',[[['dxpcCloseButtonHover_SoftOrange'],[''],['HCB-1'],,[['']],['Img']]]);
+
+var dxo = new ASPxClientPopupControl('ctl00_MsgPopup');
+window['MsgPopup'] = dxo;
+dxo.callBack = function(arg) { WebForm_DoCallback('ctl00$MsgPopup',arg,aspxCallback,'ctl00_MsgPopup',aspxCallbackError,true); };
+dxo.uniqueID = 'ctl00$MsgPopup';
+dxo.popupAction='None';
+dxo.closeAction='CloseButton';
+dxo.popupHorizontalAlign='WindowCenter';
+dxo.popupVerticalAlign='WindowCenter';
+dxo.isPopupPositionCorrectionOn=false;
+dxo.allowDragging=true;
+dxo.width=500;
+dxo.height=300;
+dxo.InlineInitialize();
+
+//-->
+</script>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+
+WebForm_InitCallback();//]]>
+</script>
+<input type="hidden" name="DXScript" value="1_42,1_74,1_59,1_52,1_65,3_7,2_22,2_28,2_29,2_21,1_46,1_67,1_64,2_16,2_15"></form>
+
+
+</body></html>

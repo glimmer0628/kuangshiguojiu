@@ -1,0 +1,1107 @@
+﻿/* Reset */
+
+body, form, div, li,
+h1, h2, h3, h4, h5, h6,
+pre, form, fieldset,
+p,blockquote
+{ 
+	margin: 0;
+	padding: 0;
+}
+
+fieldset, img 
+{ 
+	border: 0;
+}
+
+ol, ul 
+{
+	list-style: none;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 
+{
+	font-size: 100%;
+	font-weight: normal;
+}
+
+/* Common */
+
+html
+{
+    overflow-y: scroll;
+}
+
+body
+{
+    background: #dedfe2;
+    font: 9pt 宋体, Arial, Helvetica, sans-serif;
+    color: #2e3139;
+    min-width: 1080px;
+}
+
+td 
+{
+    font: 9pt 宋体, Arial, Helvetica, sans-serif;
+}
+
+.TextContent
+{
+	line-height: 14px;
+}
+
+.TextContent p,
+.TextContent ul li,
+.TextContent ol li,
+.TextContent code
+{
+    margin-bottom: 10px;
+}
+
+.TextContent ul,
+.TextContent ol
+{
+	list-style: outside;
+	padding: 0;
+	margin-left: 32px;
+}
+
+.TextContent ul
+{
+	
+	list-style-type: disc;
+}
+
+.TextContent ol
+{
+	list-style-type: decimal;
+}
+
+.TextContent a
+{
+	color: #1b3f91;
+	text-decoration: none;
+}
+
+.TextContent a:hover
+{
+	text-decoration: underline;	
+}
+
+
+
+/* Core Layout */
+
+.MainBackground
+{
+    background: white url(BodyBack.png) repeat-x;
+    visibility:visible;
+    
+}
+
+.Wrapper
+{
+    text-align: center;    
+    background: url(WrapperBack.png) repeat-x bottom;
+    min-width: 1080px;
+}
+
+.Content
+{
+    margin: 0 auto;
+    text-align: left;
+    width: 1080px;    
+}
+
+.ContentLeft
+{
+    float: left;
+    width: 1032px;
+    background: url(ContentLeftBack.png) no-repeat left bottom;
+}
+
+.ContentLeftInner,
+.ContentLeftInner_Intro
+{
+    float: left;
+    width: 266px;
+}
+
+.ContentLeftInner
+{
+    min-height: 852px;
+    background: url(ContentLeftInnerBack.png) no-repeat left top;
+}
+
+.ContentLeftInner_Intro
+{
+    min-height: 852px;
+    background: url(ContentLeftInnerBack_Intro.png) no-repeat left top;
+}
+
+
+.FooterLeft
+{
+    float: left;
+    width: 1032px;
+    background: url(FooterLeftBack.png) no-repeat left bottom;
+}
+
+.FooterLeftInner
+{
+    float: left;
+    width: 266px;
+    text-align: center;
+    padding-top: 83px;
+}
+
+.ContentCenter
+{
+    float: right;    
+    width: 766px;        
+}
+
+.ContentCenterInner
+{    
+    min-height: 600px;
+    background: white url(ContentCenterInnerBack.png) no-repeat left top;
+}
+
+.ContentCenterInner_Intro
+{
+    min-height: 600px;
+    background: white url(ContentCenterInnerBack_Intro.png) no-repeat left top;
+}
+
+.FooterCenter
+{
+    float: right;    
+    width: 766px;    
+    height: 206px;
+    background: url(FooterCenterBack.png) repeat-x bottom;    
+}
+
+.ContentRight
+{
+    float: left;
+    width: 100%;
+    background: url(ContentRightBack.png) no-repeat right bottom;
+}
+
+.ContentRightInner,
+.ContentRightInner_Intro
+{
+    float: right;
+    width: 48px;    
+}
+
+.ContentRightInner
+{
+    height: 852px;
+    background: url(ContentRightInnerBack.png) no-repeat right top;
+}
+
+.ContentRightInner_Intro
+{
+    height: 852px;
+    background: url(ContentRightInnerBack_Intro.png) no-repeat right top;
+}
+
+.FooterRight
+{
+    clear: both;
+    float: left;
+    width: 100%;
+    background: url(FooterRightBack.png) no-repeat right bottom;
+}
+
+
+/* Title */
+
+.TitleLogo 
+{
+	height: 56px;
+	padding: 23px 0 0 23px;
+}
+
+.TitleLogo img
+{
+    position: relative;
+}
+
+/* Navigation bar */
+
+.Navigation
+{
+	padding: 25px 0 0 18px;
+	width: 239px;
+}
+
+.NavigationBar
+{
+	padding: 0;
+}
+
+.NavigationBar .dxnb-header
+{
+    font-weight: bold;
+    padding: 3px 0 31px; 
+    background: url(NavigationBarGroupTop.png) no-repeat center bottom;
+}
+
+.NavigationBar .dxnb-headerCollapsed
+{    
+    padding: 3px 0;
+    cursor: pointer;
+}
+
+.NavigationBar .dxnb-header,
+.NavigationBar .dxnb-headerCollapsed
+{
+   padding-left: 21px;
+   line-height: 15px;
+}
+
+.NavigationBar .dxnb-headerCollapsedHover
+{
+    background: url(NavigationBarHover.png) repeat-y top left;
+}
+
+.NavigationBar .dxnb-header a,
+.NavigationBar .dxnb-headerCollapsed a
+{
+	color: #2e3139;
+	text-decoration: none;    
+}
+
+.NavigationBar .dxnb-header a:hover
+{
+	text-decoration: none;
+    cursor: default;
+}
+
+.NavigationBar .dxnb-header .dxnb-btn, .NavigationBar .dxnb-headerCollapsed .dxnb-btn
+{
+    background-image: url(Sprite.png);
+    background-repeat: no-repeat;
+    width: 7px;
+    height: 7px;
+    margin-top: 5px;
+    margin-left: -14px;
+    float: left;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.NavigationBar .dxnb-header .dxnb-btn
+{	    
+    background-position: -367px -1px;
+}
+
+.NavigationBar .dxnb-headerCollapsed .dxnb-btn
+{
+    background-position: -359px -1px;
+}
+
+.NavigationBar .dxnb-content
+{
+    padding: 0 0 28px 6px;
+    margin-bottom: 1px;
+    background: url(NavigationBarGroupBottom.png) no-repeat center bottom;    
+}
+
+.NavigationBar .dxnb-item
+{
+    padding: 3px 0 3px 40px;
+    line-height: 15px;
+}
+
+.NavigationBar .dxnb-item a
+{
+    color: #1b3f91;
+    text-decoration: none;
+}
+
+.NavigationBar .dxnb-item a:hover
+{
+    color: #990000;
+    text-decoration: underline;
+}
+
+.NavigationBar .dxnb-itemSelected
+{
+    font-weight: normal;
+    background: url(Sprite.png) no-repeat -375px 6px;
+    color: #990000;
+}
+
+.NavigationBar .dxnb-itemSelected a, .NavigationBar .dxnb-itemSelected a:hover
+{
+    color: #990000;
+    text-decoration: none;
+    cursor: default;
+}
+
+.NavigationBar .NewImage,
+.NavigationBar .UpdatedImage
+{
+    background-image: url(Sprite.png);
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    border: 0;
+    float: right;
+    margin-left: 5px;
+    margin-right: 8px;
+}
+
+.NavigationBar .NewImage
+{
+    background-position: -207px -309px;
+}
+
+.NavigationBar .UpdatedImage
+{
+    background-position: -207px -326px;
+}
+
+
+/* Tabs */
+
+.TabsArea
+{
+	padding: 28px 10px 0 0;
+	height: 25px;
+}
+
+.TabControl
+{
+	float: right;
+}
+
+.TabControl .dxtc-strip
+{
+    list-style: none outside none;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.TabControl .dxtc-strip li
+{
+	display: block;
+    margin: 0;
+    float: left;
+}
+
+.ActiveTab, .Tab
+{
+    width: 68px;
+    float: left;
+}
+
+.ActiveTab div
+{
+    padding: 6px 0 10px;
+    float: left;
+}
+
+.ActiveTab .Left
+{
+	width: 3px;
+    overflow: hidden;
+	background: url(Sprite.png) no-repeat 0px 0px;
+}
+
+.ActiveTab .Center
+{
+    color: #343841;
+    text-align: center;
+	width: 62px;
+	background: url(Sprite.png) repeat-x -3px 0px;
+}
+
+.ActiveTab .Right
+{
+	width: 3px;
+    overflow: hidden;
+	background: url(Sprite.png) no-repeat -269px 0px;
+}
+
+.Tab
+{
+	color: white;
+    text-align: center;
+    padding: 6px 0 10px;
+}
+
+/* Intro Banner */
+
+.BannerArea
+{
+    height: 312px;
+}
+
+.BannerScreens
+{
+    float: right;    
+}
+
+.BannerLeft
+{
+    float: left;
+    width: 380px;     
+    padding: 40px 0 0 29px;    
+}
+
+.BannerText
+{
+    height: 109px;
+    padding-left: 8px;
+}
+
+.BannerText h1
+{
+    font-size: 20px
+}
+
+.BannerText h3
+{
+   font-size: 12px;
+   margin-top: 10px; 
+}
+
+/* Banner Buttons */
+
+.BannerButtons ul
+{
+	padding: 0;
+}
+
+.BannerButtons li
+{
+	float: left;
+}
+
+.BannerButton_LearnMore,
+.BannerButton_LearnMoreHover,
+.BannerButton_Download,
+.BannerButton_DownloadHover,
+.BannerButton_BuyNow,
+.BannerButton_BuyNowHover,
+.BannerButton_Videos,
+.BannerButton_VideosHover
+{
+    background: url(Sprite.png) no-repeat;
+}
+
+
+.BannerButton_LearnMore
+{
+    background-position: -4px -171px;
+}
+
+.BannerButton_LearnMoreHover
+{
+    background-position: -4px -43px;
+}
+
+.BannerButton_Download
+{
+    background-position: -99px -171px;
+}
+
+.BannerButton_DownloadHover
+{
+    background-position: -99px -43px;
+}
+
+.BannerButton_BuyNow
+{
+    background-position: -177px -171px;
+}
+
+.BannerButton_BuyNowHover
+{
+    background-position: -177px -43px;
+}
+
+.BannerButton_Videos
+{
+    background-position: -255px -171px;
+}
+
+.BannerButton_VideosHover
+{
+    background-position: -255px -43px;
+}
+
+/* Intro Hightlight Area */
+
+.HilightArea
+{
+    height: 157px;
+}
+
+.HilightArea h2
+{
+    font-size: 16px;    
+    color: #40444f;
+    text-align: center;
+    padding: 16px 0 11px;
+}
+
+/* Highlighted Demos Lite Menu */
+
+.HilightedDemosMenu
+{
+    padding-left: 40px;
+}
+
+.HilightedDemosMenu ul
+{
+	padding: 0;
+}
+
+.HilightedDemosMenu li
+{
+	float: left;
+}
+
+.HilightedDemosMenu .dxm-content
+{
+    width: 150px;
+    margin-right: 28px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.HilightedDemosMenu a
+{
+    color: #909298;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.HilightedDemosMenu a:hover 
+{
+    text-decoration: underline;
+}
+
+.HilightedDemosMenu img
+{
+	display: block;
+    border: solid 1px #c0c0c0 !important;
+    margin-bottom: 6px;    
+}
+
+/* Intro Main Area */
+
+.IntroArea
+{
+    padding: 28px 37px 50px;
+}
+
+.IntroArea h2
+{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Intro Features */
+
+.FeaturesArea
+{
+    padding: 11px 0 0;
+}
+
+.FeatureImageArea 
+{
+    float: left;
+    clear: both;
+    width: 41px;    
+}
+.FeatureTextArea
+{
+    float: left;
+    width: 300px;
+}
+.FeatureTextArea h4
+{
+    font-weight: bold;
+    padding: 5px 0;
+}
+.FeatureTextArea div
+{
+    margin-bottom: 20px;
+    margin-right: 31px;
+}
+
+/* Demo pages */
+
+.RegTitle
+{
+    padding: 18px 33px 8px;
+    font-size: 9px;
+    background: url(DemoTitleBack.png) no-repeat left bottom;
+    font-family: 宋体;
+}
+
+#DemoArea,
+#CodeArea
+{
+    padding: 30px 27px 50px;
+}
+
+/* Theme Selector */
+
+#ThemeSelectorArea
+{
+    float: right;
+    margin: -39px 30px 0 0;
+}
+
+#ThemeSelectorButton
+{
+    border: 1px white solid;
+    cursor: pointer;
+    float: right;
+    width: 126px;
+    height: 32px;
+    margin-top: 1px;
+    background: url(Sprite.png) no-repeat -228px -307px;
+}
+
+#ThemeSelectorButton:hover,
+#ThemeSelectorButton.selected
+{
+    border: 1px #B8BBC4 solid;
+}
+
+#ThemeSelectorButtonBorder
+{
+    background-color: white;
+    width: 126px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 20000;
+}
+
+.ThemeSelectorPopup,
+.ThemeSelectorPopup.dxpc-mainDiv
+{
+	border: 1px #B8BBC4 solid;
+    background: white;
+    padding: 0 12px;
+}
+
+.ThemeSelectorPopup.dxpc-mainDiv 
+{
+    float: left;
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#ThemesContainer
+{
+    font-size: 16px;
+    padding: 6px 3px;
+    width: 480px;
+}
+
+.ThemeGroup
+{
+	clear: both;
+	padding: 8px 4px 2px;
+}
+
+.ThemeGroupMenu
+{
+}
+
+.ThemeGroupMenu ul
+{
+	padding: 0;
+}
+
+.ThemeGroupMenu li
+{
+	float: left;
+}
+
+.ThemeGroupMenu .dxm-item
+{
+    color: #909298;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 5px;
+    text-align: center;
+    font-style: italic;
+}
+
+.ThemeGroupMenu .dxm-item img
+{
+    margin-bottom: 4px;
+}
+
+.ThemeGroupMenu .dxm-hovered
+{
+    background-color: #E2EAFD;
+    border: 1px #C7CFE0 solid;
+    padding: 4px;
+}
+
+.ThemeGroupMenu .dxm-selected
+{
+    background-color: #EEF0F3;
+    border: 1px #909090 solid;
+    color: #2E3139;
+    cursor: default;
+    font-weight: bold;
+    padding: 4px;
+}
+
+.ThemeDefaultImage, .ThemeDevExImage,
+.ThemeOffice2010BlueImage, .ThemeOffice2010BlackImage, .ThemeOffice2010SilverImage,
+.ThemeOffice2003BlueImage, .ThemeOffice2003OliveImage, .ThemeOffice2003SilverImage,
+.ThemeAquaImage, .ThemeGlassImage, .ThemeBlackGlassImage, .ThemePlasticBlueImage, .ThemeRedWineImage, .ThemeSoftOrangeImage, .ThemeYouthfulImage 
+{
+    background: url(ThemesPreviewSprite.png) no-repeat;
+    width: 150px;
+    height: 50px;
+}
+
+.ThemeDefaultImage
+{
+    background-position: 0 0;
+}
+
+.ThemeDevExImage
+{
+    background-position: -150px 0;
+}
+
+.ThemeOffice2010BlueImage
+{
+    background-position: 0 -150px;
+} 
+
+.ThemeOffice2010BlackImage
+{
+    background-position: -150px -150px;
+} 
+
+.ThemeOffice2010SilverImage
+{
+    background-position: -300px -150px;
+
+} 
+
+.ThemeOffice2003BlueImage
+{
+    background-position: 0 -200px;
+} 
+
+.ThemeOffice2003OliveImage
+{
+    background-position: -150px -200px;
+} 
+
+.ThemeOffice2003SilverImage
+{
+    background-position: -300px -200px;
+} 
+
+.ThemeAquaImage
+{
+    background-position: -300px 0;
+} 
+
+.ThemeGlassImage
+{
+    background-position: 0 -50px;
+} 
+
+.ThemeBlackGlassImage
+{
+    background-position: -150px -50px;
+} 
+
+.ThemePlasticBlueImage
+{
+    background-position: -300px -50px;
+} 
+
+.ThemeRedWineImage
+{
+    background-position: 0 -100px;
+} 
+
+.ThemeSoftOrangeImage
+{
+    background-position: -150px -100px;
+} 
+
+.ThemeYouthfulImage
+{
+    background-position: -300px -100px;
+} 
+
+/* Demo area */
+
+#DemoArea
+{
+    padding-left: 33px;
+    padding-right: 33px;
+    overflow: hidden;
+}
+
+#DemoArea h1 { font-size: 24px; }
+#DemoArea h2 { font-size: 20px; }
+#DemoArea h3 { font-size: 18px; }
+#DemoArea h4 { font-size: 16px; }
+#DemoArea h5 { font-size: 14px; }
+#DemoArea h6 { font-size: 12px; }
+
+#DemoArea p 
+{
+    margin-bottom: 10px;
+}
+
+#DemoArea .DescriptionTitle
+{
+	clear: both;
+    padding: 45px 0 8px;    
+    margin: 0 0 10px;
+    font-size: 16px;
+    background: url(DemoTitleBack.png) no-repeat left bottom;
+}
+
+/* Event monitor */
+
+.EventLogPanel
+{
+    float: left;
+    padding: 0px 10px 0px 0px;
+}
+
+.EventListPanel
+{
+	line-height: 200%;
+	float: left;
+	white-space: nowrap;
+}
+
+.EventListPanel input
+{ 
+	vertical-align: middle;
+}
+
+
+#EventLog,
+.EventLog
+{
+	background-color: White;
+	border: solid 1px #9d9d9d;
+	color: Black;
+	font-family: Tahoma, Sans-Serif;
+	font-size: 11px;
+	overflow: auto;
+	padding: 5px;
+	width: 550px;
+	height: 200px;
+	margin-bottom: 8px;
+}
+
+/* Code area */
+
+#CodeArea
+{
+    display: none;    
+}
+
+.CodeNavBar
+{
+	padding: 0;
+}
+
+.CodeNavBar .dxnb-header,
+.CodeNavBar .dxnb-headerCollapsed
+{
+	font-size: 16px;
+}
+
+.CodeNavBar .dxnb-header
+{
+    padding-bottom: 4px;
+}
+
+.CodeNavBar .dxnb-headerCollapsed
+{
+    padding-bottom: 32px;
+}
+
+.CodeNavBar .dxWeb_nbCollapse,
+.CodeNavBar .dxWeb_nbExpand
+{
+	cursor: pointer;
+    width: 13px;
+    height: 13px;
+    background: url(Sprite.png) no-repeat;
+    margin-right: 6px;
+    margin-top: 3px;
+    float: left;
+}
+
+.CodeNavBar .dxWeb_nbCollapse
+{
+    background-position: -340px 0;
+}
+
+.CodeNavBar .dxWeb_nbExpand
+{
+    background-position: -326px 0;
+}
+
+.CodeNavBar .dxnb-header a,
+.CodeNavBar .dxnb-headerCollapsed a
+{
+	text-decoration: none;
+    float: left;
+}
+
+.CodeNavBar .dxnb-header a
+{
+    color: #CB3535;
+}
+
+.CodeNavBar .dxnb-headerCollapsed a
+{
+    color: #2e3139;    
+}
+
+.CodeNavBar .PopupLinkContainer
+{
+    float: right;
+    font-size: 11px;
+    color: #1B3F91;
+    cursor: pointer;
+    padding-top: 2px;
+}
+
+.CodeNavBar .PopupLinkContainer:hover
+{
+    text-decoration: underline;
+}
+
+.CodeNavBar .dxnb-content
+{
+    border: solid 1px #d1d1d6;
+    background: #fbfbfb url(CodeBack.png) repeat-x top;
+    max-height: 360px;
+    overflow: auto;
+    margin-bottom: 34px;
+    padding: 25px;
+    white-space: nowrap;
+    font-family: Courier New, Monospace;
+    font-size: 11px;
+}
+
+/* Footer */
+
+.FooterText
+{
+	padding: 18px 37px 0;
+    height: 148px;
+}
+
+.FooterText .Version
+{
+	font-size: 17px;
+}
+
+.FooterText a
+{
+	color: #1b3f91;
+	text-decoration: none;
+}
+
+.FooterText a:hover
+{
+	text-decoration: underline;	
+}
+
+.FooterLogo
+{
+    background: url(Sprite.png) no-repeat -3px -309px;
+    width:192px; 
+    height:56px; 
+}
+
+.Copyright
+{
+    text-align: center;
+    color: #242424;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+}
+
+
+/* Aux */
+
+.Clear
+{
+    display: block;    
+    clear: both;
+    overflow: hidden;
+    width: 1px;
+    height: 0;
+}
+
+.LeftPadding
+{
+    padding-left: 12px;
+}
+
+.TopPadding 
+{
+    padding-top: 6px;
+}
+
+.BottomPadding
+{
+    padding-bottom: 6px;
+}
+
+.TopMargin 
+{
+    margin-top: 6px;
+}
+
+.BottomMargin 
+{
+    margin-bottom: 6px;
+}
+
+.Note 
+{
+    margin: 10px 0;
+}
+
+div.Spacer 
+{
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+}
+
+.NoWrap { 
+    white-space: nowrap; 
+}
+

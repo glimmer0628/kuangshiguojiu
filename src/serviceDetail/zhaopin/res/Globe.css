@@ -1,0 +1,502 @@
+﻿body
+{
+    padding: 0px;
+    border-style: none;
+    border-width: 0px;
+    margin: 0px;
+    font-size: 9pt;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    clip: rect(0px, 0px, 0px, 0px);
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+}
+
+.FullPage
+{
+    padding: 0px;
+    border-style: none;
+    border-width: 0px;
+    margin: 0px;
+    font-size: 9pt;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    clip: rect(0px, 0px, 0px, 0px);
+}
+
+.blacklabel
+{
+    font-size: 9pt;
+    color: #000000;
+}
+
+.sunti9
+{
+    font-size: 9pt;
+    color: #000000;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+}
+
+td
+{
+    font-size: 9pt;
+    white-space: nowrap;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+}
+
+.PageTitle
+{
+    background-image: url('images/Pagetitle.gif');
+    background-repeat: no-repeat;
+}
+
+.PageTitleTest
+{
+    background-image: url('images/PageTitle-Test.png');
+    background-repeat: no-repeat;
+}
+
+.PageTitleBg
+{
+    background-image: url('images/PagetitleBg.gif');
+    background-repeat: repeat-x;
+}
+
+.MsgPanel
+{
+    border: 2px solid #006666;
+    padding: 16px;
+    font-size: 9pt;
+    background-color: #FFFFFF;
+    position: absolute;
+    z-index: 99;
+    top: 107px;
+    left: 348px;
+    width: 271px;
+}
+
+
+
+
+.saLog
+{
+    position: absolute;
+    z-index: 99;
+    height: 120px;
+    width: 120px;
+    top: 167px;
+    left: 383px;
+}
+
+
+.auLog
+{
+    position: absolute;
+    z-index: 99;
+    height: 120px;
+    width: 120px;
+    top: 100px;
+    left: 600px;
+}
+
+
+
+
+
+.alertPanel
+{
+    position: absolute;
+    z-index: 99;
+    width: 300px;
+    height: 100px;
+    top: 150px;
+    left: 350px;
+}
+
+.MenuPanel
+{
+    font-size: 9pt;
+    vertical-align: middle;
+    position: relative;
+    width: 800px;
+    height: 400px;
+    display: inline-block;
+}
+
+.absPos
+{
+    font-size: 9pt;
+    position: absolute;
+}
+
+.redlink
+{
+    font-size: 9pt;
+    color: #CC0000;
+    text-decoration: none;
+}
+
+.blacklink
+{
+    font-size: 9pt;
+    color: #000000;
+    text-decoration: none;
+}
+
+
+.FullHeight
+{
+    height: 100%;
+    width: 100%;
+}
+
+.redlinkBgWhite
+{
+    font-size: 9pt;
+    color: #CC0000;
+    text-decoration: none;
+    background-color: #FFFFFF;
+}
+
+.CenterText
+{
+    font-size: 9pt;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.PageHeader
+{
+    width: 100%;
+    height: 89px;
+    background-image: url('images/PagetitleBg.gif');
+    background-repeat: repeat-x;
+}
+
+.PageFooter
+{
+    width: 100%;
+    height: 27px;
+    background-image: url('images/PageFooter.gif');
+    background-repeat: repeat-x;
+}
+
+.TabSheet_Title
+{
+    height: 29px;
+    background-position: top;
+    background-image: url('images/TabSheet_title.gif');
+    background-repeat: repeat-x;
+}
+
+.TabSheet_Title_Left
+{
+    background-position: right top;
+    width: 13px;
+    height: 29px;
+    background-image: url('images/TabSheet_title_left.gif');
+    background-repeat: no-repeat;
+}
+
+.TabSheet_Title_Right
+{
+    background-position: left top;
+    width: 13px;
+    height: 29px;
+    background-image: url('images/TabSheet_title_right.gif');
+    background-repeat: no-repeat;
+}
+
+.MainMenuHover
+{
+    background-image: url('App_Themes/MainMenu/Web/mRootItemBgHover.png');
+    background-repeat: repeat-x;
+    background-position: left top;
+    background-color: #AE3631;
+}
+
+
+
+.datalable
+{
+    font-size: 9pt;
+    color: #000066;
+}
+
+.GridHeader
+{
+    color: #000000;
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#E0E0E0', gradientType='0');
+}
+
+.GridFooter
+{
+    color: #000000;
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#FFFFFF', endColorStr='#E0E0E0', gradientType='0');
+}
+
+
+.datatextbox
+{
+    border-style: none;
+    font-size: 9pt;
+    color: #800000;
+    border: 0 none;
+}
+
+.datadropdownlist
+{
+    border-style: none;
+    font-size: 9pt;
+    color: #800000;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+}
+
+.querytextbox
+{
+    border: 1px solid #999999;
+    font-size: 9pt;
+    color: #800000;
+}
+
+.queryropdownlist
+{
+    font-size: 9pt;
+    color: #800000;
+}
+
+.whitelink
+{
+    border: 1px none #808080;
+    font-size: 9pt;
+    color: #FFFFFF;
+    font-style: normal;
+    text-decoration: none;
+    background-color: #800000;
+}
+
+    .whitelink:hover
+    {
+        border: 1px solid #800000;
+        font-size: 9pt;
+        color: #800000;
+        font-style: normal;
+        text-decoration: none;
+        background-color: #FFFFFF;
+    }
+
+    .whitelink:visited
+    {
+        border: 1px none #808080;
+        font-size: 9pt;
+        color: #FFFFFF;
+        font-style: normal;
+        text-decoration: none;
+        background-color: #800000;
+    }
+
+.gzField
+{
+    font-size: 9pt;
+    color: #990000;
+    font-weight: bold;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+}
+
+.AlarmItem
+{
+    font-size: 9pt;
+    font-weight: bold;
+    color: #990000;
+    /*text-decoration: blink; */
+}
+
+.sunti9black
+{
+    font-size: 9pt;
+    color: #000000;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+}
+
+
+.sunti9blackbold
+{
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    color: #000000;
+}
+
+.treebox_right_line
+{
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: #808080;
+}
+
+.box_title_line
+{
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 26px;
+    vertical-align: middle;
+    border-bottom-style: dotted;
+    border-bottom-width: 2px;
+    border-bottom-color: #808080;
+    color: #000000;
+}
+
+.box_titl_img
+{
+    vertical-align: middle;
+}
+
+.button66
+{
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    background-image: url('images/buttons/blankButton66.gif');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    border-style: none;
+    border-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 66px;
+    height: 22px;
+}
+
+.button_whitebg_dotline
+{
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    font-weight: normal;
+    background-image: url('images/bg-white.gif');
+    background-repeat: repeat;
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-color: #808080;
+    background-color: #FFFFFF;
+}
+
+.Tab_Top_Line
+{
+    padding: 0px;
+    margin: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #808080;
+}
+
+/* 人员档案Grid颜色类 */
+.rownormal
+{
+    color: #000099;
+    background-color: #FFFFFF;
+}
+
+.rownew
+{
+    color: #000099;
+    background-color: #BFBFD5;
+}
+
+.rowchange
+{
+    color: #000099;
+    background-color: #B7EEDF;
+}
+
+.rowgoto
+{
+    color: #000099;
+    background-color: #D2D2A6;
+}
+
+
+.rowlogoff
+{
+    color: #000099;
+    background-color: #CC3300;
+}
+
+
+.RedButton
+{
+    padding: 1px 2px 1px 2px;
+    margin: 0px;
+    font-family: 宋体, Arial, Helvetica, sans-serif;
+    font-size: 9pt;
+    color: #FFFFFF;
+    background-color: #800000;
+    border: 1px solid #C0C0C0;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.grayline
+{
+    border-style: none;
+    border-width: 0px;
+    padding: 0px 8px 0px 8px;
+    margin: 0px;
+    background-color: Gray;
+    height: 2px;
+}
+
+td.wraptext
+{
+    white-space: pre-wrap;
+}
+
+.align_left
+{
+    text-align:left;
+}
+
+.align_right
+{
+    text-align:right;
+}
+
+.align_center
+{
+    text-align:center;
+}
+
+.tdCenter
+{
+    width: 100%; height: 85%; vertical-align: top;margin:0 auto;
+}
+
+.BodyBack
+{
+    background-image: url('Content/BodyBack.png');
+    background-repeat: repeat-x;
+}
+
+
+.ContentCenterInnerBack
+{
+    background-image: url('Content/ContentCenterInnerBack.png');
+    background-repeat: repeat-x;
+}
+
+.LeftMenubar
+{
+    width: 260px;
+    background-image: url('Content/ContentLeftBack.png');
+    background-repeat: repeat-y;
+}
